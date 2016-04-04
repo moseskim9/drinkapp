@@ -7,11 +7,11 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    @item = stores.items.new
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = stores.items.build(item_params)
   end
 
   def edit

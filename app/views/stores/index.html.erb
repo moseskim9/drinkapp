@@ -1,2 +1,8 @@
 <h1>Stores#index</h1>
 <p>Find me in app/views/stores/index.html.erb</p>
+
+<% @stores.each do |store| %>
+  <%= image_tag store.image %>
+  <h2> <%= link_to store.name, store_path(store) %> </h2>
+  <p> <%= store.address %> </p>
+<% end %>
