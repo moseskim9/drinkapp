@@ -3,14 +3,13 @@
 <%= @store.image %>
 <h2> <%= @store.name %> </h2>
 <p> <%= @store.address %> </p>
-<p> <%= @store.address %> </p>
 <p> <%= @store.city %> </p>
 <p> <%= @store.postcode %> </p>
 <p> <%= @store.country %> </p>
 
 <% @store.items.each do |item| %>
   <h2> <%= item.name %> </h2>
-  <p> <%= item.price %> </p>
+  <p> <%= item.price.to_f %> </p>
 <% end %>
 
 
