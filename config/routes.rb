@@ -1,35 +1,14 @@
 Rails.application.routes.draw do
-  get 'pages/home'
 
-  get 'items/index'
-
-  get 'items/show'
-
-  get 'items/add'
-
-  get 'items/create'
-
-  get 'items/edit'
-
-  get 'items/update'
-
-  get 'items/destroy'
-
-  get 'stores/index'
-
-  get 'stores/show'
-
-  get 'stores/add'
-
-  get 'stores/create'
-
-  get 'stores/edit'
-
-  get 'stores/update'
-
-  get 'stores/destroy'
+  root 'pages#home'
 
   devise_for :users
+
+
+  resources :stores do
+    resources :items
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
