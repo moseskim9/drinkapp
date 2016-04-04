@@ -39,7 +39,7 @@ class StoresController < ApplicationController
   def search
 
     @city = params[:location]
-    @stores_city = Store.near(@city, 500)
+    @stores_city = Store.near(@city, 50)
 
 
   end
