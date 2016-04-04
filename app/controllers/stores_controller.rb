@@ -36,6 +36,14 @@ class StoresController < ApplicationController
     @store.destroy
   end
 
+  def search
+
+    @city = params[:location]
+    @stores_city = Store.near(@city, 500)
+
+
+  end
+
   private
 
   def find_store

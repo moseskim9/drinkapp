@@ -22,15 +22,15 @@ stores = Store.create([
   {
     image: "http://austinot.com/wp-content/uploads/2015/07/Cocos-Cafe-Boba-Tea-1024x683.jpg",
     name: "Coco Fresh Tea & Juice",
-    address: "521 S Olive St",
+    address: "129 E 45th St, New York",
     postcode: "90013",
-    city: "Los Angeles",
+    city: "New York",
     country: "USA"
   },
   {
     image: "http://cdn.pastemagazine.com/www/articles/LABEERBARS-NEWMAIN.jpg",
     name: "Beer Belly",
-    address: "532 S Western",
+    address: "532 S Western, Los Angeles",
     postcode: "90020",
     city: "Los Angeles",
     country: "USA"
@@ -38,17 +38,17 @@ stores = Store.create([
   {
     image: "http://media3.s-nbcnews.com/j/msnbc/Components/Photo_StoryLevel/080226/080226-starbucks-hmed10a.grid-6x2.jpg",
     name: "Starbucks",
-    address: "138 S Central Ave",
+    address: "1912 Pike Pl, Seattle",
     postcode: "90012",
-    city: "Los Angeles",
+    city: "Seattle",
     country: "USA"
   },
   {
     image: "http://media2.wxyz.com/photo/2015/01/29/7-11%20robbery,%2006-20-14_1422543137400_12862758_ver1.0_640_480.JPG",
     name: "7/11",
-    address: "4650 Franklin Ave",
+    address: "535 S State St, Chicago",
     postcode: "90027",
-    city: "Los Angeles",
+    city: "Chicago",
     country: "USA"
   }
 ])

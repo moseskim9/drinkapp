@@ -6,3 +6,9 @@
   <h2> <%= link_to store.name, store_path(store) %> </h2>
   <p> <%= store.address %> </p>
 <% end %>
+
+<% @stores_city.each do |store| %>
+  <%= image_tag store.image %>
+  <h2> <%= link_to store.name, store_path(store) %> </h2>
+  <p> <%= store.address %> </p>
+<% end %>
