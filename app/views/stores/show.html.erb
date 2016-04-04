@@ -1,3 +1,20 @@
 <h1>Stores#show</h1>
-<p>Find me in app/views/stores/show.html.erb</p>
+
+<%= @store.image %>
+<h2> <%= @store.name %> </h2>
+<p> <%= @store.address %> </p>
+<p> <%= @store.address %> </p>
+<p> <%= @store.city %> </p>
+<p> <%= @store.postcode %> </p>
+<p> <%= @store.country %> </p>
+
+<% @store.items.each do |item| %>
+  <h2> <%= item.name %> </h2>
+  <p> <%= item.price %> </p>
+<% end %>
+
+
+
+
+
 

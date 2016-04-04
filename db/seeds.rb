@@ -20,7 +20,7 @@ Item.destroy_all
 
 stores = Store.create([
   {
-    image: "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-sazerac.jpg",
+    image: "http://austinot.com/wp-content/uploads/2015/07/Cocos-Cafe-Boba-Tea-1024x683.jpg",
     name: "Coco Fresh Tea & Juice",
     address: "521 S Olive St",
     postcode: "90013",
@@ -28,7 +28,7 @@ stores = Store.create([
     country: "USA"
   },
   {
-    image: "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-sazerac.jpg",
+    image: "http://cdn.pastemagazine.com/www/articles/LABEERBARS-NEWMAIN.jpg",
     name: "Beer Belly",
     address: "532 S Western",
     postcode: "90020",
@@ -36,7 +36,7 @@ stores = Store.create([
     country: "USA"
   },
   {
-    image: "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-sazerac.jpg",
+    image: "http://media3.s-nbcnews.com/j/msnbc/Components/Photo_StoryLevel/080226/080226-starbucks-hmed10a.grid-6x2.jpg",
     name: "Starbucks",
     address: "138 S Central Ave",
     postcode: "90012",
@@ -44,7 +44,7 @@ stores = Store.create([
     country: "USA"
   },
   {
-    image: "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-sazerac.jpg",
+    image: "http://media2.wxyz.com/photo/2015/01/29/7-11%20robbery,%2006-20-14_1422543137400_12862758_ver1.0_640_480.JPG",
     name: "7/11",
     address: "4650 Franklin Ave",
     postcode: "90027",
@@ -54,268 +54,317 @@ stores = Store.create([
 ])
 
 
-
+coco = Store.first
 
 coco_items = Item.create([
   {
     name: "Black Tea",
-    price: 2.30
+    price: 2.30,
+    store: coco
   },
   {
     name: "House Milk Tea",
-    price: 2.99
+    price: 2.99,
+    store: coco
   },
   {
     name: "Pudding Milk Tea",
-    price: 2.99
+    price: 2.99,
+    store: coco
   },
   {
     name: "Taro Milk Tea",
-    price: 2.76
+    price: 2.76,
+    store: coco
   },
   {
     name: "2 Ladies (Milk Tea w/Pudding and Pearls",
-    price: 3.67
+    price: 3.67,
+    store: coco
   },
   {
     name: "Tea Latte",
-    price: 3.67
+    price: 3.67,
+    store: coco
   },
   {
     name: "Matcha Latte With Red Bean",
-    price: 3.67
+    price: 3.67,
+    store: coco
   },
   {
     name: "Cream Green Tea",
-    price: 2.30
+    price: 2.30,
+    store: coco
   },
   {
     name: "Green Tea",
-    price: 2.30
+    price: 2.30,
+    store: coco
   },
   {
     name: "Bubble Tea (Pearl Milk Tea)",
-    price: 3.22
+    price: 3.22,
+    store: coco
   },
   {
     name: "Jasmine Milk Tea",
-    price: 3.22
+    price: 3.22,
+    store: coco
   },
   {
     name: "Cream Taro Milk Tea",
-    price: 3.22
+    price: 3.22,
+    store: coco
   },
   {
     name: "3 Buddies",
-    price: 3.67
+    price: 3.67,
+    store: coco
   },
   {
     name: "Matcha Latte",
-    price: 3.22
+    price: 3.22,
+    store: coco
   },
   {
     name: "Cream Black Tea",
-    price: 3.22
+    price: 3.22,
+    store: coco
   },
   {
     name: "Chocolate Milk Tea",
-    price: 2.76
+    price: 2.76,
+    store: coco
   },
   {
     name: "Grapefruit Green Tea",
-    price: 4.13
+    price: 4.13,
+    store: coco
   },
   {
     name: "Lemon Green Tea",
-    price: 4.13
+    price: 4.13,
+    store: coco
   },
   {
     name: "Lemon Dunk",
-    price: 4.82
+    price: 4.82,
+    store: coco
   },
   {
     name: "Orange juice",
-    price: 4.13
+    price: 4.13,
+    store: coco
   },
   {
     name: "House Milk Tea",
-    price: 2.53
+    price: 2.53,
+    store: coco
   },
   {
     name: "Passion Fruit Green Tea",
-    price: 3.22
+    price: 3.22,
+    store: coco
   },
   {
     name: "Green Tea Yogurt",
-    price: 3.67
+    price: 3.67,
+    store: coco
   },
   {
     name: "Grapefruit Yogurt",
-    price: 4.13
+    price: 4.13,
+    store: coco
   },
   {
     name: "Passion Mango Slush",
-    price: 3.22
+    price: 3.22,
+    store: coco
   },
   {
     name: "Taro Slush",
-    price: 3.67
+    price: 3.67,
+    store: coco
   },
   {
     name: "Grapefruit Juice",
-    price: 4.13
+    price: 4.13,
+    store: coco
   },
   {
     name: "Lemon Black Tea",
-    price: 4.13
+    price: 4.13,
+    store: coco
   },
   {
     name: "Mango Green Tea",
-    price: 3.22
+    price: 3.22,
+    store: coco
   },
   {
     name: "Orange Green Tea",
-    price: 4.13
+    price: 4.13,
+    store: coco
   },
   {
     name: "Mango Green Tea",
-    price: 3.22
+    price: 3.22,
+    store: coco
   },
   {
     name: "Tropical Special",
-    price: 4.13
+    price: 4.13,
+    store: coco
   },
   {
     name: "Mango Yogurt",
-    price: 3.67
+    price: 3.67,
+    store: coco
   },
   {
     name: "Lemon Yogurt",
-    price: 4.59
+    price: 4.59,
+    store: coco
   },
   {
     name: "Mango Slush",
-    price: 3.67
+    price: 3.67,
+    store: coco
   }
 ])
 
 
 
-
+beerbelly = Store.second
 
 beerbelly_items  = Item.create([
   {
     name: "All natural Boylan Cola (12oz)",
-    price: 3.00
+    price: 3.00,
+    store: beerbelly
   },
   {
     name: "Bundaberg Ginger Beer (375ml",
-    price: 3.00
+    price: 3.00,
+    store: beerbelly
   },
   {
     name: "Virgil's Cherry Cream Soda",
-    price: 3.00
+    price: 3.00,
+    store: beerbelly
   },
   {
     name: "Harney & Sons Organic Peach Tea (16oz)",
-    price: 4.00
+    price: 4.00,
+    store: beerbelly
   },
   {
     name: "Stumpton Cold Brew Coffee (10.5oz)",
-    price: 5.00
+    price: 5.00,
+    store: beerbelly
   },
   {
     name: "Stumpton Cold Brew Coffee w /Chocolate (16 oz)",
-    price: 5.00
+    price: 5.00,
+    store: beerbelly
   },
   {
     name: "All Natural Boylan Diet Cola (12oz)",
-    price: 3.00
+    price: 3.00,
+    store: beerbelly
   },
   {
     name: "Bundberg Grapefruit Soda (275 ml)",
-    price: 3.00
+    price: 3.00,
+    store: beerbelly
   },
   {
     name: "Virgils Rootbeer (12oz)",
-    price: 3.00
+    price: 3.00,
+    store: beerbelly
   },
   {
     name: "Harney & Sons Organica Green Tea w/ Ginko and Citrus(16 oz)",
-    price: 4.00
+    price: 4.00,
+    store: beerbelly
   },
   {
     name: "Stumpton Cold Brew Coffee w/ Milk (16 oz)",
-    price: 5.00
+    price: 5.00,
+    store: beerbelly
   }
-
-
-
-
-starbucks_items = Item.create([
-{name: "Freshley Brewed Coffee", price: 1.95},
-{name: "96 oz Coffee Traveler", price: 14.95},
-{name: "Iced Coffee", price: "2.25"},
-{name: "Starbucks Cold Brew", price: 2.75},
-{name: "Hot Chocolate", price: 2.75},
-{name: "Classic Chai Tea Latte", price: 3.45},
-{name: "Oprah Cinnamon Chai Latte", price: 3.75},
-{name: "Iced Caramel Macchiato", price: 3.65},
-{name: "Iced Vanilla Latte", price: 3.35},
-{name: "Iced Caffe Mocha", price: 3.35},
-{name: "Vanilla Macchiato", price: 3.65},
-{name: "Caramel Macchiato", price: 3.65},
-{name: "Hazelnut Macchiato", price: 3.65},
-{name: "White Chocolate Mocha", price: 3.65},
-{name: "Cinnamon Dolce Latte", price: 3.65},
-{name: "Caffe Latte", price: 2.85},
-{name: "Vanilla Latte", price: 3.35},
-{name: "Skinny Vanilla Latte", price: 3.35},
-{name: "Caffe Mocha", price: 3.35},
-{name: "Skinny Caffe Mocha", price: 3.35},
-{name: "Caffe Americano", price: 2.25},
-{name: "Cappuccino", price: 3.15},
-{name: "Flat White", price: 3.95},
-{name: "Latte Macchiato", price: 3.95},
-{name: "Iced Black Tea", price: 2.25},
-{name: "Iced Green Tea", price: 2.25},
-{name: "Passion Tango", price: 2.45},
-{name: "Vanilla Bean Frappuccino", price: 3.45},
-{name: "Mocha Frappuccino", price: 3.95},
-{name: "Caramel Frappuccino", price: 3.95},
-{name: "Caramel Brulee Frappuccino", price: 4.45},
-{name: "Strawberry Acai Refresher", price: 2.95},
-{name: "Peach Green Tea Lemonade", price: 2.95},
-{name: "Strawberry Smoothie", price: 5.95},
-{name: "Mango Carrot Smoothie", price: 5.95},
-{name: "Sweet Greens Smoothie", price: 5.95}
 ])
 
+starbucks = Store.third
+
+starbucks_items = Item.create([
+{name: "Freshley Brewed Coffee", price: 1.95, store: starbucks},
+{name: "96 oz Coffee Traveler", price: 14.95, store: starbucks},
+{name: "Iced Coffee", price: 2.25, store: starbucks},
+{name: "Starbucks Cold Brew", price: 2.75, store: starbucks},
+{name: "Hot Chocolate", price: 2.75, store: starbucks},
+{name: "Classic Chai Tea Latte", price: 3.45, store: starbucks},
+{name: "Oprah Cinnamon Chai Latte", price: 3.75, store: starbucks},
+{name: "Iced Caramel Macchiato", price: 3.65, store: starbucks},
+{name: "Iced Vanilla Latte", price: 3.35, store: starbucks},
+{name: "Iced Caffe Mocha", price: 3.35, store: starbucks},
+{name: "Vanilla Macchiato", price: 3.65, store: starbucks},
+{name: "Caramel Macchiato", price: 3.65, store: starbucks},
+{name: "Hazelnut Macchiato", price: 3.65, store: starbucks},
+{name: "White Chocolate Mocha", price: 3.65, store: starbucks},
+{name: "Cinnamon Dolce Latte", price: 3.65, store: starbucks},
+{name: "Caffe Latte", price: 2.85, store: starbucks},
+{name: "Vanilla Latte", price: 3.35, store: starbucks},
+{name: "Skinny Vanilla Latte", price: 3.35, store: starbucks},
+{name: "Caffe Mocha", price: 3.35, store: starbucks},
+{name: "Skinny Caffe Mocha", price: 3.35, store: starbucks},
+{name: "Caffe Americano", price: 2.25, store: starbucks},
+{name: "Cappuccino", price: 3.15, store: starbucks},
+{name: "Flat White", price: 3.95, store: starbucks},
+{name: "Latte Macchiato", price: 3.95, store: starbucks},
+{name: "Iced Black Tea", price: 2.25, store: starbucks},
+{name: "Iced Green Tea", price: 2.25, store: starbucks},
+{name: "Passion Tango", price: 2.45, store: starbucks},
+{name: "Vanilla Bean Frappuccino", price: 3.45, store: starbucks},
+{name: "Mocha Frappuccino", price: 3.95, store: starbucks},
+{name: "Caramel Frappuccino", price: 3.95, store: starbucks},
+{name: "Caramel Brulee Frappuccino", price: 4.45, store: starbucks},
+{name: "Strawberry Acai Refresher", price: 2.95, store: starbucks},
+{name: "Peach Green Tea Lemonade", price: 2.95, store: starbucks},
+{name: "Strawberry Smoothie", price: 5.95, store: starbucks},
+{name: "Mango Carrot Smoothie", price: 5.95, store: starbucks},
+{name: "Sweet Greens Smoothie", price: 5.95, store: starbucks}
+])
+
+
+seveneleven = Store.last
+
 seveneleven_items = Item.create([
-{name: "Pepsi 20 oz", price: 1.99},
-{name: "Diet Pepsi 20 oz", price: 1.99},
-{name: "Mountain Dew 20 oz", price: 1.99},
-{name: "Diet Mtn Dew 20 oz", price: 1.99},
-{name: "Fanta Orange 20 oz", price: 1.99},
-{name: "Dr Pepper 20 oz", price: 1.99},
-{name: "Diet Dr Pepper 20 oz", price: 1.99},
-{name: "Canada Dry Gingerale 20 oz", price: 1.99},
-{name: "Diet Coke 20 oz", price: 1.99},
-{name: "Coca Cola 20 oz", price: 1.99},
-{name: "Sprite 20 oz", price: 1.99},
-{name: "Starbucks Doubleshot Vanilla", price: 3.29},
-{name: "Starbucks Doubleshot Mocha", price: 3.29},
-{name: "Frappuccino Moca 13.7 oz", price: 3.49},
-{name: "Frappuccino Coffee 13.7 oz", price: 3.49},
-{name: "Coca-Cola Zero 20 oz", price: 1.99},
-{name: "Gatorade Cool Blue Cherry 28 oz", price: 2.62},
-{name: "Vita Coco Pure Coconut Water", price: 3.69},
-{name: "Gatorade Orange 28 0z", price: 2.83},
-{name: "Gatorade Lemon Lime 28 oz", price: 2.81},
-{name: "Gatorade Fruit Punch 20 oz", price: 1.99},
-{name: "Gatorade Lemon Lime 20 oz", price: 1.99},
-{name: "Gatorade Orange 20 oz", price: 1.99},
-{name: "V8 Vegetable Juice 12 oz", price: 2.09}
+{name: "Pepsi 20 oz", price: 1.99, store: seveneleven},
+{name: "Diet Pepsi 20 oz", price: 1.99, store: seveneleven},
+{name: "Mountain Dew 20 oz", price: 1.99, store: seveneleven},
+{name: "Diet Mtn Dew 20 oz", price: 1.99, store: seveneleven},
+{name: "Fanta Orange 20 oz", price: 1.99, store: seveneleven},
+{name: "Dr Pepper 20 oz", price: 1.99, store: seveneleven},
+{name: "Diet Dr Pepper 20 oz", price: 1.99, store: seveneleven},
+{name: "Canada Dry Gingerale 20 oz", price: 1.99, store: seveneleven},
+{name: "Diet Coke 20 oz", price: 1.99, store: seveneleven},
+{name: "Coca Cola 20 oz", price: 1.99, store: seveneleven},
+{name: "Sprite 20 oz", price: 1.99, store: seveneleven},
+{name: "Starbucks Doubleshot Vanilla", price: 3.29, store: seveneleven},
+{name: "Starbucks Doubleshot Mocha", price: 3.29, store: seveneleven},
+{name: "Frappuccino Moca 13.7 oz", price: 3.49, store: seveneleven},
+{name: "Frappuccino Coffee 13.7 oz", price: 3.49, store: seveneleven},
+{name: "Coca-Cola Zero 20 oz", price: 1.99, store: seveneleven},
+{name: "Gatorade Cool Blue Cherry 28 oz", price: 2.62, store: seveneleven},
+{name: "Vita Coco Pure Coconut Water", price: 3.69, store: seveneleven},
+{name: "Gatorade Orange 28 0z", price: 2.83, store: seveneleven},
+{name: "Gatorade Lemon Lime 28 oz", price: 2.81, store: seveneleven},
+{name: "Gatorade Fruit Punch 20 oz", price: 1.99, store: seveneleven},
+{name: "Gatorade Lemon Lime 20 oz", price: 1.99, store: seveneleven},
+{name: "Gatorade Orange 20 oz", price: 1.99, store: seveneleven},
+{name: "V8 Vegetable Juice 12 oz", price: 2.09, store: seveneleven}
 ])
 
 
