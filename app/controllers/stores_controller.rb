@@ -3,12 +3,13 @@ class StoresController < ApplicationController
 
   def index
     @stores = Store.all
-
+    @item = @store.items
   end
 
   def show
-    @items = Item.all
+    @item = @store.items
 
+    @order = current_user.current_order if current_user
   end
 
   def new

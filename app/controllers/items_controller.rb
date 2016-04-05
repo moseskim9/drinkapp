@@ -7,11 +7,13 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = stores.items.new
+    @store = Store.find(params[:store_id])
+    @item = @store.items.new
   end
 
   def create
-    @item = stores.items.build(item_params)
+    @store = Store.find(params[:store_id])
+    @item = @store.items.build(item_params)
   end
 
   def edit
