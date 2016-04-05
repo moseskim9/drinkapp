@@ -38,6 +38,9 @@ class OrderLinesController < ApplicationController
   end
 
   def destroy
+    @order_line = OrderLine.find(params[:id])
+    @order_line.destroy
+    redirect_to current_order_path
   end
 
   private
