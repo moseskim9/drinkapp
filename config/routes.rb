@@ -1,17 +1,23 @@
 Rails.application.routes.draw do
 
+
   root 'pages#home'
 
   devise_for :users
 
 
   resources :stores do
-    resources :items
+    resources :items do
+      resources :order_lines do
+      end
+    end
+
     collection do
       get 'search', to: "stores#search"
     end
   end
 
+  get 'current_order' => 'orders#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
