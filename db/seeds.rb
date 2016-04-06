@@ -34,6 +34,27 @@ stores = Store.create([
     postcode: "90020",
     city: "Los Angeles",
     country: "USA"
+  },{
+    image: "http://www.pbwc.ca/images/stumptown-stubby-04.jpg",
+    name: "Stumptown",
+    address: "7871 Santa Monica Blvd, West Hollywood",
+    postcode: "90020",
+    city: "Los Angeles",
+    country: "USA"
+  },{
+    image: "http://www.welikela.com/wp-content/uploads/2015/08/factory-tea-boba.jpg",
+    name: "Boba Time",
+    address: "701 S Vermont Ave, Los Angeles",
+    postcode: "90020",
+    city: "Los Angeles",
+    country: "USA"
+  },{
+    image: "http://losangeles.grubstreet.com/20130124_clover_560x375.jpg",
+    name: "Clover Juice",
+    address: "342 S La Brea Ave, Los Angeles",
+    postcode: "90020",
+    city: "Los Angeles",
+    country: "USA"
   },
   {
     image: "http://media3.s-nbcnews.com/j/msnbc/Components/Photo_StoryLevel/080226/080226-starbucks-hmed10a.grid-6x2.jpg",
