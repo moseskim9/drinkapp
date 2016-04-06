@@ -13,7 +13,7 @@
             <th>Items</th>
             <th>Price</th>
             <th>Quantity</th>
-            <th>Total</th>
+            <th class="col_width">Total</th>
           </tr>
         </thead>
 
@@ -41,7 +41,7 @@
             <td>
               <input class="quantity" type="text" value="<%= order_line.quantity %>">
             </td>
-            <td><span class="total"> $ <%= (order_line.item.price) * (order_line.quantity) %> </span>
+            <td><span class="total col_width"> $ <%= (order_line.item.price) * (order_line.quantity) %> </span>
             </td>
           </tr>
         </tbody>
@@ -68,7 +68,7 @@
             </td>
 
 
-            <td><span class="total"> $ <%= @subtotal %> </span></td>
+            <td><span class="total col_width;"> $ <%= @subtotal %> </span></td>
 
           </tr>
         </tbody>
@@ -104,7 +104,7 @@
           <tr class="">
             <td class="continue">
               <div class="final_button">
-              <%= link_to "CONTINUE SHOPPING", :back %>
+              <%= link_to "Continue shopping", :back %>
             </div>
             </td>
 

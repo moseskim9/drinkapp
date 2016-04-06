@@ -1,5 +1,6 @@
-<h1>Orderlines#new</h1>
+<div class="container add_item_format">
 
+  <h2>Add an item</h2>
 
 <!--   <form class="form-inline" role="form" action="/stores/:store_id/items/:item_id/order_lines">
     <div class="form-group">
@@ -9,14 +10,12 @@
 
     </div>
    <button type="submit" class="btn btn-default">Submit</button>
-  </form> -->
+ </form> -->
 
+ <%= simple_form_for [@store, @item, @orderline] do |f| %>
+ <%= f.input :quantity %>
+ <%= f.input :special_instruction%>
+ <div class="add_item_button">  <%= f.button :submit %> </div>
+ <% end %>
 
-<%= simple_form_for [@store, @item, @orderline] do |f| %>
-  <%= f.input :quantity %>
-  <%= f.input :special_instruction%>
-  <%= f.button :submit %>
-<% end %>
-
-
-
+</div>

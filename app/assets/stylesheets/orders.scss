@@ -35,10 +35,10 @@
 }
 
 .disclaimer {
-  color: rgba(100, 100, 100, 0.7);
-  font-weight: 120;
+  color: rgba(1, 1, 1, 0.7);
+  font-weight: lighter;
   font-style: normal;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 1.5px;
 }
 
@@ -53,7 +53,7 @@
 .item-summary {
   font-size: 18px;
   font-weight: lighter;
-  color: rgba(100, 100, 100, 0.7);
+  color: rgba(1, 1, 1, 0.7);
   float: left;
 }
 
@@ -63,9 +63,19 @@
   color: rgba(100, 100, 100, 0.7);
   float: left;
   color: #7fdbd4;
+  display: inline-block;
+  margin-left: 20px;
 }
 
 .final_button a {
+  color: #7fdbd4;
+  font-size: 18px;
+  font-weight: lighter;
+  font-weight: 280;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
 
- color: solid #7fdbd4;
+.col_width {
+  width: 10%;
 }
