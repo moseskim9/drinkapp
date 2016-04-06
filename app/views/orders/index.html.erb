@@ -1,9 +1,6 @@
 <h1>Orders#index</h1>
 
-<% @order.order_lines.each do |order_line| %>
-  <%= order_line.quantity %>
-  <%= order_line.special_instruction %>
-<% end %>
+
 <div class="content">
   <div class="container inner">
     <section id="cart" data-place-uuid="3ae92a94-d3b9-4656-82ec-e6d9838c274a">
@@ -36,7 +33,6 @@
             <td>
               <input class="quantity" type="text" value="<%= order_line.quantity %>">
             </td>
-            <% @subtotal += (order_line.item.price) * (order_line.quantity) %>
             <td><span class="total"> $ <%= (order_line.item.price) * (order_line.quantity) %> </span></td>
             <% @subtotal += (order_line.item.price) * (order_line.quantity) %>
           </tr>
@@ -59,7 +55,7 @@
               <%= link_to "Continue Shopping", :back %>
             </td>
             <td class="checkout" colspan="3">
-              <%= "Checkout" %>
+              <%= link_to "Checkout", store_current_order_path(@store)  %>
             </td>
           </tr>
         </tfoot>

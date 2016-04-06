@@ -2,15 +2,17 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @order = current_user.current_order
-    @order_lines = @order.order_lines
-    @subtotal = 0
-
+    @store =  Store.find(params[:store_id])
+    @order = current_user.orders.find_by_store_id(@store)
+    if !@order
+      redirect_to store_path(@store)
+    else
+      @order_lines = @order.order_lines
+      @subtotal = 0
+    end
   end
 
   def show
-    @order = Order.find(params[:id])
-    @email = current_user.email
   end
 
   def new
@@ -28,6 +30,6 @@ class OrdersController < ApplicationController
   def destroy
     @order = Order.find(params[:id])
     @order.destroy
-    redirect_to current_order_path
+    redirect_to store_current_order_path(@order.store)
   end
 end
