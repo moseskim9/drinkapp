@@ -1,32 +1,45 @@
 <div class="container">
-  <div class="store_banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @store.image %>');">
 
-      <div>
-        <h1><%= @store.name %></h1>
-        <p><%= @store.address %></p>
-    </div>
-
-  </div>
 </div>
-
-
 
 <div class="container">
-  <div class="row">
-    <% @store.items.each do |item| %>
-    <div class="col-md-6" "col-xs-12">
-      <div class="item_listing"> <p> <%= link_to item.name, new_store_item_order_line_path(@store, item) %> - $<%= item.price.to_f %> </p></div>
+  <div class="store_banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @store.image %>');">
+    <div>
+      <h1><%= @store.name %></h1>
+      <p><%= @store.address %></p>
     </div>
-    <% end %>
   </div>
 </div>
 
+<div class="container" >
+  <div class="underline">
+  <div class="wrapper">
+    <div class= "title_format">
+      <h2>DRINKS</h2> </div>
+      <div class="btn checkout_button checkout_button_text button_format">
+        <%= link_to "CHECKOUT", current_order_path %>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <% @store.items.each do |item| %>
+      <div class= "col-xs-12 col-md-6">
+        <div class="item">
+          <%= link_to item.name, new_store_item_order_line_path(@store, item) %>
+        </div>
+        <div class="price">
+          $<%= item.price.to_f %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 
 
-
-<%= link_to "CHECKOUT", current_order_path %>
-
-<br><br>
 
 
 
@@ -37,4 +50,4 @@
 
 <!--   <div class="col-xs-6">
     </div>
- -->
+  -->
