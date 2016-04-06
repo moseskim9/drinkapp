@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'profile', to: "users#show"
+
+  get 'joe', to: "users#index"
+  resources :users
+
+
   root 'pages#home'
 
   devise_for :users

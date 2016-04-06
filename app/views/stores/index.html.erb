@@ -1,8 +1,109 @@
-<h1>Stores#index</h1>
-<p>Find me in app/views/stores/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/scss" href="assets/stylesheets/stores.scss">
+</head>
+<body>
 
-<% @stores.each do |store| %>
-  <%= image_tag store.image %>
-  <h2> <%= link_to store.name, store_path(store) %> </h2>
-  <p> <%= store.address %> </p>
-<% end %>
+
+
+<div>
+
+  <div class="container container-local">
+    <div class="row">
+
+        <%
+        $i = 0
+        $num = 30
+
+
+        while $i < $num  do
+          appart = false
+          special = false
+          endSpecial = false
+
+            myClass = "col-md-4"
+            if $i % 7 == 0
+                myClass = "col-md-8 big #{$i}"
+            end
+            if $i % 6 == 0
+              special = true
+              appart = true
+               myClass = "col-md-4  #{$i}"
+            end
+            if $i % 7 == 0
+              appart = true
+            end
+            if $i % 8 == 0
+              appart = true
+              endSpecial = true
+            end
+            if $i % 9 == 0
+              myClass = "col-md-8 big  #{$i}"
+            end
+            $i +=1;
+
+          %>
+
+          <% if appart %>
+
+            <% if special %>
+                 <div class="col-xs-12 col-sm-6 <%= myClass %> <%= appart %> ">
+             <% end %>
+
+                  <div class="col-xs-12 no-padding" >
+                    <a href="">
+                    <div class="card" style="background:linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0.5));">
+
+                      <div class="card-category"><h3>Title</h3></div>
+                      <div class="card-description">
+                        <p>description</p>
+                      </div>
+
+                    </div>
+                    </a>
+                  </div>
+
+              <% if endSpecial %>
+                 </div>
+              <% end %>
+
+           <% else %>
+
+            <div class="col-xs-12 col-sm-6 hello <%= myClass %> ">
+
+              <div class="col-xs-12 no-padding" >
+                <a href="">
+                <div class="card" style="background:linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0.5));">
+
+                  <div class="card-category"><h3>Title</h3></div>
+                  <div class="card-description">
+                    <p>Nqme</p>
+                  </div>
+
+                </div>
+                </a>
+              </div>
+            </div>
+
+          <% end %>
+
+
+
+
+
+
+
+
+        <% end %>
+
+        </div>
+
+    </div>
+
+</div><!--End of Container Div -->
+
+</body>
+</html>
