@@ -12,8 +12,8 @@ Rails.application.routes.draw do
       end
     end
 
-    get 'current_order' => 'orders#index'
-    get 'final_ch'      => 'orders#final_'
+    get 'current_order'     => 'orders#index'
+    get 'checkout'    => 'orders#checkout'
 
 
     collection do

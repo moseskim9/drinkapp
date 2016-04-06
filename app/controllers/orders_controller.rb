@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
       redirect_to store_path(@store)
     else
       @order_lines = @order.order_lines
-      @subtotal = 0
+      @subtotal = @order.make_subtotal
     end
   end
 
@@ -31,5 +31,13 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.destroy
     redirect_to store_current_order_path(@order.store)
+  end
+
+  def checkout
+    @store = Store.find(params[:store_id])
+    @order = current_user.orders.find_by_store_id(@store)
+    @subtotal = @order.make_subtotal
+    @service_fee = @subtotal * 0.09
+    @total = @subtotal * 1.09
   end
 end
