@@ -33,8 +33,8 @@
             <td>
               <input class="quantity" type="text" value="<%= order_line.quantity %>">
             </td>
-            <td><span class="total"> $ <%= (order_line.item.price) * (order_line.quantity) %> </span></td>
-            <% @subtotal += (order_line.item.price) * (order_line.quantity) %>
+            <td><span class="total"> $ <%= (order_line.item.price) * (order_line.quantity) %> </span>
+            </td>
           </tr>
         </tbody>
 
@@ -55,7 +55,7 @@
               <%= link_to "Continue Shopping", :back %>
             </td>
             <td class="checkout" colspan="3">
-              <%= link_to "Checkout", store_current_order_path(@store)  %>
+              <%= link_to "Checkout", store_checkout_path(@store)  %>
             </td>
           </tr>
         </tfoot>
