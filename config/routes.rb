@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'profile', to: "users#show"
+
+  resources :users
 
   root 'pages#home'
 
