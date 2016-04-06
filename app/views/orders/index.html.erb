@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="container">
     <section data-place-uuid="3ae92a94-d3b9-4656-82ec-e6d9838c274a">
@@ -40,9 +41,8 @@
             <td>
               <input class="quantity" type="text" value="<%= order_line.quantity %>">
             </td>
-            <% @subtotal += (order_line.item.price) * (order_line.quantity) %>
-            <td><span class="total"> $ <%= (order_line.item.price) * (order_line.quantity) %> </span></td>
-            <% @subtotal += (order_line.item.price) * (order_line.quantity) %>
+            <td><span class="total"> $ <%= (order_line.item.price) * (order_line.quantity) %> </span>
+            </td>
           </tr>
         </tbody>
         <% end %>
@@ -107,9 +107,10 @@
               <%= link_to "CONTINUE SHOPPING", :back %>
             </div>
             </td>
+
             <td class="" colspan="3">
               <div class="final_button">
-              <%= "CHECKOUT" %>
+              <%= link_to "Checkout", store_checkout_path(@store)  %>
               </div>
             </td>
           </tr>

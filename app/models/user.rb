@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
  has_many :orders
 
  def current_order
-   orders.last
+   orders.last ? orders.last : nil
  end
 end

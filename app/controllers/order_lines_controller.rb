@@ -1,6 +1,6 @@
 class OrderLinesController < ApplicationController
 
-
+  before_action :authenticate_user!
   def index
   end
 
@@ -14,16 +14,15 @@ class OrderLinesController < ApplicationController
   end
 
   def create
-    @order = current_user.current_order
-
-    unless(@order)
-      @order = Order.create(user: current_user)
+    @store = Store.find(params[:store_id])
+    @order = current_user.orders.where(store_id: @store).last
+    if  !@order
+      @order = @store.orders.create(user: current_user)
     end
 
-    @item = Item.find(params[:item_id])
-    @store = @item.store
-    @order_line = @item.order_lines.build(order_line_params)
-    @order_line.order = @order
+
+    @order_line = @order.order_lines.build(order_line_params)
+    @order_line.item_id = params[:item_id]
     if @order_line.save
       redirect_to store_path(@store)
     else
@@ -40,7 +39,7 @@ class OrderLinesController < ApplicationController
   def destroy
     @order_line = OrderLine.find(params[:id])
     @order_line.destroy
-    redirect_to current_order_path
+    redirect_to store_current_order_path(@order_line.store)
   end
 
   private
