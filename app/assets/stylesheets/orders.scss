@@ -1,3 +1,71 @@
 // Place all the styles related to the orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cart_format h1 {
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.cart_format h2 {
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.cart_format th {
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+
+.cart_underline {
+  border-bottom: 4px solid #7fdbd4;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.disclaimer {
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: 120;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+
+.total {
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+
+.item-summary {
+  font-size: 18px;
+  font-weight: lighter;
+  color: rgba(100, 100, 100, 0.7);
+  float: left;
+}
+
+.remove_button a {
+  font-size: 18px;
+  font-weight: 160;
+  color: rgba(100, 100, 100, 0.7);
+  float: left;
+  color: #7fdbd4;
+}
+
+.final_button a {
+
+ color: solid #7fdbd4;
+}
