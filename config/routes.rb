@@ -12,12 +12,16 @@ Rails.application.routes.draw do
       end
     end
 
+    get 'current_order' => 'orders#index'
+    get 'final_ch'      => 'orders#final_'
+
+
     collection do
       get 'search', to: "stores#search"
     end
+
   end
 
-  get 'current_order' => 'orders#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
