@@ -1,3 +1,29 @@
 // Place all the styles related to the orderlines controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.add_item_format {
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.add_item_format h1 {
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.add_item_button a {
+  color: rgba(100, 100, 100, 0.7);
+  font-size: 18px;
+  font-weight: lighter;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}

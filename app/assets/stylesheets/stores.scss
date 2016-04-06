@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .store_banner {
   color: white;
   text-align: center;
@@ -12,18 +13,22 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
+  margin-bottom: 20px;
 }
+
 .store_banner h1 {
   font-size: 50px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
+
 .store_banner p {
   font-size: 20px;
   font-weight: lighter;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
 }
+
 .store_banner-a {
   text-align: center;
   height: 100vh;
@@ -33,13 +38,25 @@
   align-items: center;
   justify-content: center;
 }
+
 .item a {
   font-size: 18px;
   font-weight: lighter;
-  color: rgba(100, 100, 100, 0.7);
+  color: rgba(20, 20, 20, 0.7);
   margin-bottom: 20px;
   float: left;
+  text-decoration: none;
 }
+
+.item a:hover {
+  font-size: 18px;
+  font-weight: lighter;
+  color: rgba(20, 20, 20, 0.7);
+  margin-bottom: 20px;
+  float: left;
+  text-decoration: none;
+}
+
 .price {
   float: right;
   color: rgba(100, 100, 100, 0.7);
@@ -47,6 +64,7 @@
   font-weight: lighter;
   margin-bottom: 20px;
 }
+
 .wrapper {
   display: flex;
   justify-content: space-between;
@@ -59,9 +77,12 @@
   font-weight: lighter;
 }
 
-.checkout_button {
-  margin-top: 20px;
+.checkout_button_border {
   border: 2px solid rgba(100, 100, 100, 0.7);
+}
+
+.checkout_button_border:hover {
+  border: 2px solid rgba(20, 20, 20, 0.7);
 }
 
 .checkout_button_text a {
@@ -73,18 +94,31 @@
 }
 
 .title_format h2 {
-  text-align: left;
+  float: left;
   color: rgba(100, 100, 100, 0.7);
   font-weight: 400;
   font-style: normal;
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-
+  vertical-align: bottom;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 38px;
 }
 
 .underline {
   border-bottom: 2px solid #7fdbd4;
-  padding-bottom: 7px;
+  padding-bottom: 10px;
   margin-bottom: 20px;
+}
+
+.container_show {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.no-margin {
+    margin: 0;
 }
