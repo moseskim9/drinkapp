@@ -1,20 +1,56 @@
-<h1>Stores#show</h1>
+<div class="container">
 
-<%= @store.image %>
-<h2> <%= @store.name %> </h2>
-<p> <%= @store.address %> </p>
-<p> <%= @store.address %> </p>
-<p> <%= @store.city %> </p>
-<p> <%= @store.postcode %> </p>
-<p> <%= @store.country %> </p>
+</div>
 
-<% @store.items.each do |item| %>
-  <h2> <%= item.name %> </h2>
-  <p> <%= item.price %> </p>
-<% end %>
+<div class="container">
+  <div class="store_banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @store.image %>');">
+    <div>
+      <h1><%= @store.name %></h1>
+      <p><%= @store.address %></p>
+    </div>
+  </div>
+</div>
+
+<div class="container" >
+  <div class="underline">
+    <div class="container_show">
+
+      <div class= "title_format">
+        <h2>DRINKS</h2>
+      </div>
+
+          <div class="btn checkout_button_border checkout_button_text button_format">
+              <%= link_to "CHECKOUT", store_current_order_path(@store) %>
+          </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <% @store.items.each do |item| %>
+      <div class= "col-xs-12 col-md-6">
+        <div class="item">
+          <%= link_to item.name, new_store_item_order_line_path(@store, item) %>
+        </div>
+        <div class="price">
+          $<%= item.price.to_f %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 
 
 
 
 
 
+
+
+
+
+<!--   <div class="col-xs-6">
+    </div>
+  -->

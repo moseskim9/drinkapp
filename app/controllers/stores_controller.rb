@@ -1,14 +1,18 @@
 class StoresController < ApplicationController
+
+
+
   before_action :find_store, only: [:show, :edit, :update, :destroy]
 
   def index
     @stores = Store.all
-
+    @item = @store.items
   end
 
   def show
-    @items = Item.all
+    @item = @store.items
 
+    @order = current_user.current_order if current_user
   end
 
   def new
@@ -34,6 +38,14 @@ class StoresController < ApplicationController
 
   def destroy
     @store.destroy
+  end
+
+  def search
+
+    @city = params[:location]
+    @stores_city = Store.near(@city, 50)
+
+
   end
 
   private

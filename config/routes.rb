@@ -2,9 +2,7 @@ Rails.application.routes.draw do
 
   get 'profile', to: "users#show"
 
-  get 'joe', to: "users#index"
   resources :users
-
 
   root 'pages#home'
 
@@ -12,7 +10,19 @@ Rails.application.routes.draw do
 
 
   resources :stores do
-    resources :items
+    resources :items do
+      resources :order_lines do
+      end
+    end
+
+    get 'current_order'     => 'orders#index'
+    get 'checkout'    => 'orders#checkout'
+
+
+    collection do
+      get 'search', to: "stores#search"
+    end
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

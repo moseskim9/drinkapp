@@ -1,0 +1,138 @@
+
+<div class="container">
+  <div class="container">
+    <section data-place-uuid="3ae92a94-d3b9-4656-82ec-e6d9838c274a">
+    <div class="cart_format">
+    <div class="cart_underline">
+      <h1>Shopping Cart</h1>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Items</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+
+
+<!--                   ORDERLINE PRINT ITERATION STARTS HERE        -->
+
+        <% @order.order_lines.each do |order_line| %>
+
+        <tbody>
+          <tr class="item" data-uuid="6079bb88-dc50-42bb-afe7-dee2924a7bd6">
+            <td>
+
+              <h2> <%= order_line.item.name %> </h2>
+
+
+              <div class="item-summary">
+                Special Instruction: <%= order_line.special_instruction %>
+              </div>
+              <div class="remove_button"><%= link_to "Remove", store_item_order_line_path(order_line.item.store, order_line.item, order_line), method: :delete %>
+              </div>
+
+
+            </td>
+            <td><span class="total"> $ <%= order_line.item.price %> </span></td>
+            <td>
+              <input class="quantity" type="text" value="<%= order_line.quantity %>">
+            </td>
+            <td><span class="total"> $ <%= (order_line.item.price) * (order_line.quantity) %> </span>
+            </td>
+          </tr>
+        </tbody>
+        <% end %>
+
+
+
+<!--                   TEST STARTS FROM HERE        -->
+
+
+
+        <tbody>
+          <tr class="" data-uuid="6079bb88-dc50-42bb-afe7-dee2924a7bd6">
+            <td>
+              <span class="disclaimer">
+              Prices listed are estimates and may vary.
+              Actual price will be charged at pickup.
+              </span>
+              <ul>
+            </td>
+            <td><span class="total"> Subtotal </span></td>
+            <td>
+              <h2> </h2>
+            </td>
+
+
+            <td><span class="total"> $ <%= @subtotal %> </span></td>
+
+          </tr>
+        </tbody>
+
+
+
+
+<!--                    FOOTER STARTS FROM HERE               -->
+        <!-- <tfoot>
+
+            <tr class="">
+
+            <td class="disclaimer" colspan="">
+              Prices listed are estimates and may vary.
+              Actual price will be charged at pickup.
+            </td>
+
+            <td class="total" colspan="">
+              Subtotal:
+            </td>
+
+            <td class="total" colspan="">
+
+            </td>
+
+             <td class="total" colspan="">
+              $ <%= @subtotal %>
+            </td>
+
+          </tr> -->
+
+
+          <tr class="">
+            <td class="continue">
+              <div class="final_button">
+              <%= link_to "CONTINUE SHOPPING", :back %>
+            </div>
+            </td>
+
+            <td class="" colspan="3">
+              <div class="final_button">
+              <%= link_to "Checkout", store_checkout_path(@store)  %>
+              </div>
+            </td>
+          </tr>
+
+
+
+        </tfoot>
+      </div>
+      </table>
+    </section>
+  </div>
+
+
+
+<!-- </div> -->
+
+</div>
+
+<!--
+<% @order.order_lines.each do |order_line| %>
+  <%= order_line.quantity %>
+  <%= order_line.special_instruction %>
+<% end %>
+<p>Orders#index</p>
+ -->
