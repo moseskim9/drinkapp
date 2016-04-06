@@ -12,3 +12,23 @@
   <h2> <%= link_to store.name, store_path(store) %> </h2>
   <p> <%= store.address %> </p>
 <% end %>
+
+<div class="container container-local">
+  <div class="row">
+    <% @stores_city.each do |store| %>
+    <div class="col-sm-6 col-md-4">
+
+      <%= link_to store.name, store_path(store) do %>
+      <div class="card" style="background-image: url('<%= image_url store.image %>'), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+
+        <div class="card-category"><h3><%= store.name %></h3></div>
+        <div class="card-description">
+          <p><%= store.address %></p>
+        </div>
+
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
