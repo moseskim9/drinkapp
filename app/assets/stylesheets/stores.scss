@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .store_banner h1 {
   font-size: 50px;
@@ -39,7 +40,18 @@
   color: rgba(100, 100, 100, 0.7);
   margin-bottom: 20px;
   float: left;
+  text-decoration: none;
 }
+
+.item a:hover {
+  font-size: 18px;
+  font-weight: lighter;
+  color: rgba(20, 20, 20, 0.7);
+  margin-bottom: 20px;
+  float: left;
+  text-decoration: none;
+}
+
 .price {
   float: right;
   color: rgba(100, 100, 100, 0.7);
@@ -59,9 +71,14 @@
   font-weight: lighter;
 }
 
-.checkout_button {
+.checkout_button_border {
   margin-top: 20px;
   border: 2px solid rgba(100, 100, 100, 0.7);
+}
+
+.checkout_button_border:hover {
+  margin-top: 20px;
+  border: 2px solid rgba(20, 20, 20, 0.7);
 }
 
 .checkout_button_text a {
@@ -73,18 +90,25 @@
 }
 
 .title_format h2 {
-  text-align: left;
+  float: left;
   color: rgba(100, 100, 100, 0.7);
   font-weight: 400;
   font-style: normal;
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-
+  display: flex;
+  justify-content: center;
 }
+
 
 .underline {
   border-bottom: 2px solid #7fdbd4;
-  padding-bottom: 7px;
+  padding-bottom: 10px;
   margin-bottom: 20px;
+}
+
+.container_show {
+  display: flex;
+  justify-content: space-between;
 }
