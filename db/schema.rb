@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160407102423) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "addresses", force: :cascade do |t|
     t.string   "street_name"
     t.string   "number"
@@ -23,9 +26,6 @@ ActiveRecord::Schema.define(version: 20160407102423) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
 
   create_table "items", force: :cascade do |t|
     t.string   "image"

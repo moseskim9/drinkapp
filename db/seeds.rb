@@ -24,7 +24,7 @@ stores = Store.create([
     name: "Coco Fresh Tea & Juice",
     address: "129 E 45th St, New York",
     postcode: "90013",
-    city: "New York",
+    city: "Los Angeles",
     country: "USA"
   },
   {
@@ -61,7 +61,7 @@ stores = Store.create([
     name: "Starbucks",
     address: "1912 Pike Pl, Seattle",
     postcode: "90012",
-    city: "Seattle",
+    city: "Los Angeles",
     country: "USA"
   },
   {
@@ -69,7 +69,60 @@ stores = Store.create([
     name: "7/11",
     address: "535 S State St, Chicago",
     postcode: "90027",
-    city: "Chicago",
+    city: "Los Angeles",
+    country: "USA"
+  },
+  {
+    image: "http://austinot.com/wp-content/uploads/2015/07/Cocos-Cafe-Boba-Tea-1024x683.jpg",
+    name: "Coco Fresh Tea & Juice",
+    address: "129 E 45th St, New York",
+    postcode: "90013",
+    city: "Los Angeles",
+    country: "USA"
+  },
+  {
+    image: "http://cdn.pastemagazine.com/www/articles/LABEERBARS-NEWMAIN.jpg",
+    name: "Beer Belly",
+    address: "532 S Western, Los Angeles",
+    postcode: "90020",
+    city: "Los Angeles",
+    country: "USA"
+  },{
+    image: "http://www.pbwc.ca/images/stumptown-stubby-04.jpg",
+    name: "Stumptown",
+    address: "7871 Santa Monica Blvd, West Hollywood",
+    postcode: "90020",
+    city: "Los Angeles",
+    country: "USA"
+  },{
+    image: "http://www.welikela.com/wp-content/uploads/2015/08/factory-tea-boba.jpg",
+    name: "Boba Time",
+    address: "701 S Vermont Ave, Los Angeles",
+    postcode: "90020",
+    city: "Los Angeles",
+    country: "USA"
+  },{
+    image: "http://losangeles.grubstreet.com/20130124_clover_560x375.jpg",
+    name: "Clover Juice",
+    address: "342 S La Brea Ave, Los Angeles",
+    postcode: "90020",
+    city: "Los Angeles",
+    country: "USA"
+  },
+  {
+    image: "http://media3.s-nbcnews.com/j/msnbc/Components/Photo_StoryLevel/080226/080226-starbucks-hmed10a.grid-6x2.jpg",
+    name: "Starbucks",
+    address: "1912 Pike Pl, Seattle",
+    postcode: "90012",
+    city: "Los Angeles",
+    country: "USA"
+  },
+  {
+    image: "http://media2.wxyz.com/photo/2015/01/29/7-11%20robbery,%2006-20-14_1422543137400_12862758_ver1.0_640_480.JPG",
+    name: "7/11",
+    address: "535 S State St, Chicago",
+    postcode: "90027",
+    city: "Los Angeles",
     country: "USA"
   }
 ])

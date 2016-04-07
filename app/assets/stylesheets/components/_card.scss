@@ -5,30 +5,40 @@
   color: white;
   position: relative;
   margin-bottom: 2px;
+  text-align: center;
 }
 .card-user {
-  position: absolute;
   right: 10px;
   top: 10px;
 }
 .card-category {
-  position: absolute;
   top: 10px;
   left: 10px;
   font-size: 10px;
   text-transform: uppercase;
+  display: flex;
+  justify-content:center;
 }
+
+.card-category h3 {
+  align-self: center;
+}
+
 .card-description {
-  position: absolute;
   bottom: 10px;
   left: 10px;
+  display:flex;
+  justify-content:center;
 }
+
 .card-description h2 {
   font-size: 24px;
 }
 .card-description p {
   font-size: 13px;
+  align-self: center;
   }
+
 .card-link {
   position: absolute;
   top: 0;
@@ -46,3 +56,41 @@
   padding-right: 1px;
 }
 
+
+.card-group {
+  .card {
+    float: left;
+    margin: 0;
+    width: 33.33333333%;
+    height: 140px;
+    border: 1px solid #fff;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      color: white;
+    }
+
+    &:first-child {
+      width: 66.666667%;
+      height: 280px;
+    }
+  }
+
+  &:nth-child(odd) {
+    .card {
+      float: right;
+
+      &:first-child {
+        width: 66.666667%;
+        height: 280px;
+      }
+    }
+  }
+}
