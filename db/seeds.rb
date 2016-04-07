@@ -124,7 +124,7 @@ stores = Store.create([
     postcode: "90027",
     city: "Los Angeles",
     country: "USA"
-  }
+  },
   {
     image: "http://cfile1.uf.tistory.com/image/253F143552481D5905E46C",
     name: "Sul & Beans",
