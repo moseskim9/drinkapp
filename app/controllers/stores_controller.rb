@@ -40,6 +40,7 @@ class StoresController < ApplicationController
   def search
 
     @city = params[:location]
+    p  @city
     @stores_city = Store.near(@city, 50)
 
 
