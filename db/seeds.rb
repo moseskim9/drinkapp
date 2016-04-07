@@ -125,6 +125,22 @@ stores = Store.create([
     city: "Los Angeles",
     country: "USA"
   }
+  {
+    image: "http://cfile1.uf.tistory.com/image/253F143552481D5905E46C",
+    name: "Sul & Beans",
+    address: "621 S Western Ave #208, Los Angeles",
+    postcode: "90027",
+    city: "Los Angeles",
+    country: "USA"
+  },
+  {
+    image: "http://www.poiseblog.com/uploads/3/7/0/5/37053913/3890226_orig.jpg",
+    name: "Lemonade",
+    address: " 505 S Flower St, Los Angeles",
+    postcode: "90027",
+    city: "Los Angeles",
+    country: "USA"
+  }
 ])
 
 
