@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
  def current_order
    orders.last ? orders.last : nil
  end
+
 end
