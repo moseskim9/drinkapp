@@ -1,0 +1,4 @@
+<%= simple_form_for ([@store, @item, @orderline], remote: true) do |f| %>
+ <%= f.input :quantity %>
+ <%= f.input :special_instruction%>
+ <div class="add_item_button">  <%= f.button :submit %> </div>

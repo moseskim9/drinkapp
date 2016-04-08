@@ -1,4 +1,4 @@
-<div class="container add_item_format">
+<div class="add_item_format">
 
   <h2>Add an item</h2>
 
@@ -15,7 +15,8 @@
  <%= simple_form_for [@store, @item, @orderline] do |f| %>
  <%= f.input :quantity %>
  <%= f.input :special_instruction%>
- <div class="add_item_button">  <%= f.button :submit %> </div>
+ <%= f.button :submit %> </div>
  <% end %>
 
 </div>
+
