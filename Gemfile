@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
-
+ruby '2.3.0'
+gem 'rails_12factor', group: :production
+gem 'puma',           group: :production
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
@@ -10,6 +12,7 @@ gem 'carrierwave'
 gem 'devise'
 gem 'geocoder'
 gem "gmaps4rails"
+gem 'omniauth-facebook'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

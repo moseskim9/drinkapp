@@ -1,6 +1,6 @@
 
-<div class="container">
-  <div class="container">
+<div class="">
+  <div class="container-inner">
     <section data-place-uuid="3ae92a94-d3b9-4656-82ec-e6d9838c274a">
     <div class="cart_format">
     <div class="cart_underline">
@@ -16,8 +16,6 @@
             <th class="col_width">Total</th>
           </tr>
         </thead>
-
-
 <!--                   ORDERLINE PRINT ITERATION STARTS HERE        -->
 
         <% @order.order_lines.each do |order_line| %>
@@ -37,12 +35,14 @@
 
 
             </td>
+            <div class="quantity-box">
             <td><span class="total"> $ <%= order_line.item.price %> </span></td>
             <td>
-              <input class="quantity" type="text" value="<%= order_line.quantity %>">
+              <input class="quantity" type="text" value=" <%= order_line.quantity %>">
             </td>
             <td><span class="total col_width"> $ <%= (order_line.item.price) * (order_line.quantity) %> </span>
             </td>
+            </div>
           </tr>
         </tbody>
         <% end %>
@@ -50,8 +50,6 @@
 
 
 <!--                   TEST STARTS FROM HERE        -->
-
-
 
         <tbody>
           <tr class="" data-uuid="6079bb88-dc50-42bb-afe7-dee2924a7bd6">
@@ -72,8 +70,6 @@
 
           </tr>
         </tbody>
-
-
 
 
 <!--                    FOOTER STARTS FROM HERE               -->

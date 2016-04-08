@@ -6,9 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-Store.destroy_all
+OrderLine.destroy_all
+Order.destroy_all
 Item.destroy_all
+Store.destroy_all
+
 
 # list = ["lemon", "mint leaves", "coke", "orange juice", "apple juice", "pear juice", "whisky", "absinth"]
 # ingredient_list = []
@@ -24,7 +26,7 @@ stores = Store.create([
     name: "Coco Fresh Tea & Juice",
     address: "129 E 45th St, New York",
     postcode: "90013",
-    city: "New York",
+    city: "Los Angeles",
     country: "USA"
   },
   {
@@ -34,21 +36,24 @@ stores = Store.create([
     postcode: "90020",
     city: "Los Angeles",
     country: "USA"
-  },{
+  },
+  {
     image: "http://www.pbwc.ca/images/stumptown-stubby-04.jpg",
     name: "Stumptown",
     address: "7871 Santa Monica Blvd, West Hollywood",
     postcode: "90020",
     city: "Los Angeles",
     country: "USA"
-  },{
+  },
+  {
     image: "http://www.welikela.com/wp-content/uploads/2015/08/factory-tea-boba.jpg",
     name: "Boba Time",
     address: "701 S Vermont Ave, Los Angeles",
     postcode: "90020",
     city: "Los Angeles",
     country: "USA"
-  },{
+  },
+  {
     image: "http://losangeles.grubstreet.com/20130124_clover_560x375.jpg",
     name: "Clover Juice",
     address: "342 S La Brea Ave, Los Angeles",
@@ -61,7 +66,7 @@ stores = Store.create([
     name: "Starbucks",
     address: "1912 Pike Pl, Seattle",
     postcode: "90012",
-    city: "Seattle",
+    city: "Los Angeles",
     country: "USA"
   },
   {
@@ -69,7 +74,23 @@ stores = Store.create([
     name: "7/11",
     address: "535 S State St, Chicago",
     postcode: "90027",
-    city: "Chicago",
+    city: "Los Angeles",
+    country: "USA"
+  },
+  {
+    image: "http://cfile1.uf.tistory.com/image/253F143552481D5905E46C",
+    name: "Sul & Beans",
+    address: "621 S Western Ave #208, Los Angeles",
+    postcode: "90027",
+    city: "Los Angeles",
+    country: "USA"
+  },
+  {
+    image: "http://www.poiseblog.com/uploads/3/7/0/5/37053913/3890226_orig.jpg",
+    name: "Lemonade",
+    address: " 505 S Flower St, Los Angeles",
+    postcode: "90027",
+    city: "Los Angeles",
     country: "USA"
   }
 ])
