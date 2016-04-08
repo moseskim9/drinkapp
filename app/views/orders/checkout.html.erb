@@ -8,9 +8,18 @@
 
         <section id="address-book" class="checkout_format">
           <div class="underline">
-            <h2>1. Enter Delivery Address</h2>
+            <h3>1. Enter Delivery Address</h3>
           </div>
         </section>
+
+
+
+<!-- options_from_collection_for_select(current_user.addresses, "id", "full_name") -->
+
+
+        <%= simple_form_for [@store, @order], method: :get do |f| %>
+          <%= f.input :address_id, collection: current_user.addresses, label_method: :full_name, value_method: :id %>
+
 
           <div class="dropdown checkout_format">
           <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -35,22 +44,6 @@
         </div>
 
 
-          <br>
-          <br>
-          <br>
-
-<!-- options_from_collection_for_select(current_user.addresses, "id", "full_name") -->
-
-
-        <%= simple_form_for [@store, @order], method: :get do |f| %>
-          <%= f.input :address_id, collection: current_user.addresses, label_method: :full_name, value_method: :id %>
-
-
-
-        <br>
-        <br>
-        <br>
-
         <!--              CREATE PAYMENT SECTION STARTS FROM HERE      -->
 
         <section id="payment-info" class="checkout_format">
@@ -71,7 +64,7 @@
 
           <div class="checkout_format" >
           <div class="underline">
-          <h3>Order Summary</h3>
+          <h3>2. Order Summary</h3>
           </div>
           <table class:"">
             <tbody><tr class="subtotal">
@@ -90,7 +83,6 @@
               <th>Delivery</th>
               <td><span class="blitz"></span>TBD</td>
             </tr>
-
             <tr class="discounts" style="display:none;">
               <th>Discounts</th>
               <td>TBD</td>
@@ -106,6 +98,7 @@
           </tbody></table>
 
           <!--              CHECKOUT FUNCTION PART STARTS FROM HERE        -->
+          <br>
 
 
           <%= f.button :submit, class: "btn btn-primary", value: "Get It Now"%>
