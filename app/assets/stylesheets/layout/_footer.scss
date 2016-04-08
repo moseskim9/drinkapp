@@ -34,6 +34,15 @@
   text-decoration: none;
   color: inherit;
 }
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
 
 /* If you don't want the footer to be responsive, remove these media queries */
 
