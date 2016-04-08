@@ -32,7 +32,7 @@
       <% @store.items.each do |item| %>
       <div class= "col-xs-12 col-md-6">
         <div class="item">
-          <%= link_to item.name, new_store_item_order_line_path(@store, item) %>
+          <%= link_to item.name, new_store_item_order_line_path(@store, item), { class: "item-link", "data-target": "#myModal", "data-toggle":"modal"} %>
         </div>
         <div class="price">
           $<%= item.price.to_f %>
@@ -41,9 +41,6 @@
       <% end %>
     </div>
   </div>
-
-
-
 
 
 

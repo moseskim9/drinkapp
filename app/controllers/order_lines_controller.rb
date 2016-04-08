@@ -11,6 +11,8 @@ class OrderLinesController < ApplicationController
     @item = Item.find(params[:item_id])
     @store = @item.store
     @orderline = @item.order_lines.new
+
+    render layout: nil
   end
 
   def create
