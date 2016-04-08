@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
 
-
-
-  get 'users/show'
-
-  get 'users/edit'
-
   root 'pages#home'
 
-  devise_for :users
+  resources :addresses
+
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :users
   resources :stores do
