@@ -8,13 +8,15 @@ Rails.application.routes.draw do
 
   resources :users
   resources :stores do
+    resources :addresses
+
     resources :items do
       resources :order_lines
     end
 
-    get 'current_order'     => 'orders#index'
-    get 'checkout'    => 'orders#checkout'
-
+    get 'current_order'   => 'orders#index'
+    get 'checkout'        => 'orders#checkout'
+    resources :orders, only: [:show]
 
     collection do
       get 'search', to: "stores#search"

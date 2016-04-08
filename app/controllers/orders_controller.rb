@@ -12,8 +12,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  def show
-  end
 
   def new
   end
@@ -39,5 +37,9 @@ class OrdersController < ApplicationController
     @subtotal = @order.make_subtotal
     @service_fee = @subtotal * 0.09
     @total = @subtotal * 1.09
+    @addresses = current_user.addresses.all
+  end
+
+  def show
   end
 end

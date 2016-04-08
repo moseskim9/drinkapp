@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407171740) do
+ActiveRecord::Schema.define(version: 20160408094124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,10 @@ ActiveRecord::Schema.define(version: 20160407171740) do
     t.string   "country"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
+
+  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id", using: :btree
 
   create_table "items", force: :cascade do |t|
     t.string   "image"
@@ -55,8 +58,10 @@ ActiveRecord::Schema.define(version: 20160407171740) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "store_id"
+    t.integer  "address_id"
   end
 
+  add_index "orders", ["address_id"], name: "index_orders_on_address_id", using: :btree
   add_index "orders", ["store_id"], name: "index_orders_on_store_id", using: :btree
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
@@ -100,9 +105,11 @@ ActiveRecord::Schema.define(version: 20160407171740) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "items", "stores"
   add_foreign_key "order_lines", "items"
   add_foreign_key "order_lines", "orders"
+  add_foreign_key "orders", "addresses"
   add_foreign_key "orders", "stores"
   add_foreign_key "orders", "users"
 end

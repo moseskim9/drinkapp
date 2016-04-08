@@ -1,0 +1,120 @@
+
+// .checkout_text_format {
+//   color: rgba(100, 100, 100, 0.7);
+//   font-weight: 500;
+//   font-style: normal;
+//   font-size: 15px;
+//   text-transform: uppercase;
+//   letter-spacing: 1.5px;
+// }
+
+// .checkout_text_format h2, h3 {
+//   color: rgba(100, 100, 100, 0.7);
+//   font-weight: 500;
+//   font-style: normal;
+//   font-size: 20px;
+//   text-transform: uppercase;
+//   letter-spacing: 1.5px;
+// }
+
+// .checkout_text_format th {
+//   float: left;
+//   color: rgba(100, 100, 100, 0.7);
+//   font-weight: 500;
+//   font-style: normal;
+//   font-size: 15px;
+//   letter-spacing: 1.5px;
+// }
+
+.checkout_text_format a {
+  // color: rgba(100, 100, 100, 0.7);
+  // font-weight: 500;
+  // font-style: normal;
+  // font-size: 15px;
+  // letter-spacing: 1.5px;
+
+  color: #7fdbd4;
+  font-size: 18px;
+  font-weight: lighter;
+  font-weight: 280;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
+
+
+.underline {
+  border-bottom: 2px solid #7fdbd4;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+
+.underline tr {
+  border-bottom: 2px solid #7fdbd4;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+
+.underline_grey {
+  border-bottom: 2px solid rgba(100, 100, 100, 0.7);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+
+.underline_grey tr {
+  border-bottom: 2px solid rgba(100, 100, 100, 0.7);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+// .checkout_border_format tbody {
+
+// }
+
+// .container_checkout {
+//   border: 0.5px solid rgba(100, 100, 100, 0.7);
+//   height: 50vh;
+//   width: 30vw;
+//   background-color: #FFFFFF;
+//   margin-top: 65px;
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .container_checkout_flex {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .container_border {
+//   border: 0.5px solid rgba(100, 100, 100, 0.7);
+//   height: 50vh;
+//   width: 50vw;
+//   background-color: #FFFFFF;
+//   margin-top: 65px;
+// }
+
+.address_button a {
+  color: #7fdbd4;
+  font-size: 18px;
+  font-weight: lighter;
+  font-weight: 280;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price_checkout td {
+  float: right;
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}

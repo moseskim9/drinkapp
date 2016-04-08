@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   devise :omniauthable, omniauth_providers: [:facebook]
 
  has_many :orders
+ has_many :addresses
 
  def current_order
    orders.last ? orders.last : nil
