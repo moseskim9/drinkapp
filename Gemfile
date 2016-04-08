@@ -12,7 +12,7 @@ gem 'carrierwave'
 gem 'devise'
 gem 'geocoder'
 gem "gmaps4rails"
-
+gem 'omniauth-facebook'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
