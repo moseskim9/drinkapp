@@ -1,5 +1,8 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
 
+<div class="container">
 
-<%= @email %>
+<h2>Thank you for your order <%= @user.email %> </h2>
+<h3>Your order id:  <%= @order.id %> </h3>
+<h3>Total amount: $ <%=@total.round(2)%> </h3>
+
+</div>
