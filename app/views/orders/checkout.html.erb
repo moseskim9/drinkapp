@@ -1,69 +1,128 @@
-
-
-
 <div class="content">
   <div class="container inner">
     <div class="row">
       <div class="col-md-7">
-        <section id="address-book" class="create">
-          <h2>1. Enter Delivery Address</h2>
-          <form id="form-select-address" class="select ng-pristine ng-valid">
-            <select name="address_uuid" class="contacts">
-              <option value="">Select an address</option>
-            </select>
-          </form>
-          <%= render 'shared/addressform' %>
-         </section>
 
-          <section id="payment-info" class="create">
+        <!--             CREATE ADDRESS SECTION STARTS FROM HERE       -->
+
+        <section id="address-book" class="checkout_format">
+          <div class="underline">
+            <h2>1. Enter Delivery Address</h2>
+          </div>
+        </section>
+
+          <div class="dropdown checkout_format">
+          <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Add a new address
+            <span class="caret"></span>
+          </a>
+
+        <ul class="dropdown-menu" aria-labelledby="dLabel">
+          <%= simple_form_for [@store, Address.new] do |f| %>
+            <%= f.input :street_name %>
+            <%= f.input :number %>
+            <%= f.input :city %>
+            <%= f.input :zip_code %>
+            <%#= f.input :store_id, as: :hidden ,input_html: {store_id: params[:store_id]} %>
+            <%= f.button :submit %>
+          <% end %>
+        </ul>
+
+
+
+
+        </div>
+
+
+          <br>
+          <br>
+          <br>
+
+
+        <%= simple_form_for [@store, @order], method: :get do |f| %>
+          <%= f.input :address_id, collection: current_user.addresses %>
+
+
+
+        <br>
+        <br>
+        <br>
+
+        <!--              CREATE PAYMENT SECTION STARTS FROM HERE      -->
+
+        <section id="payment-info" class="checkout_format">
+          <div class="underline">
             <h2>2. Enter Payment</h2>
-            <%= render 'shared/cardform' %>
-          </section>
-        </div>
-        <div class="col-md-5">
+          </div>
 
-          <section id="order-summary" data-subtotal="17.00">
-            <h3 class="heading">Order Summary</h3>
-            <table>
-              <tbody><tr class="subtotal">
-                <th>Subtotal</th>
-                <td>$ <%= @subtotal %></td>
-              </tr>
-              <tr class="service">
-                <th>Service Fee <span>(9.00%)</span></th>
-                <td>$ <%= @service_fee.round(2) %> </td>
-              </tr>
-              <tr class="tax-and-fees" style="display:none;">
-                <th>Tax &amp; Fees</th>
-                <td>TBD</td>
-              </tr>
-              <tr class="delivery">
-                <th>Delivery</th>
-                <td><span class="blitz"></span>TBD</td>
-              </tr>
-              <tr class="discounts" style="display:none;">
-                <th>Discounts</th>
-                <td>TBD</td>
-              </tr>
-              <tr class="total">
-                <th class="estimated-label">Estimated Total</th>
-                <td>
-                  <a href="#" data-toggle="popover" data-trigger="hover" data-placement="left" data-html="true" data-content="Your card may be temporarily authorized for more than your final order total. This will be adjusted when your order is complete." class="icon-info fee-breakdown" data-original-title="" title=""></a>
-                  <span class="value">$ <%= @total%></span>
-                </td>
-              </tr>
-            </tbody></table>
+        </section>
+      </div>
 
-            <form id="form-checkout" class="form-button ng-pristine ng-valid">
-              <input type="hidden" name="pickup_place_uuid" value="20974f13-275b-4736-952a-5a28c3cd78ab">
-              <input type="hidden" name="cart_uuid" value="ca210f53-2308-487c-b655-8d0d9940915d">
-              <input type="hidden" name="cart_generation" value="9577075d-db3f-41da-a6f9-b2530ced5841">
-              <input type="hidden" name="cart_url" value="/la/20974f13-275b-4736-952a-5a28c3cd78ab/cart">
-              <input type="hidden" name="place_url" value="/la/20974f13-275b-4736-952a-5a28c3cd78ab">
-              <button id="get-it-now" class="btn btn-primary" type="submit">Get It Now</button>
-            </form>
-          </section>
+
+      <!--              ORDER SUMMARY STARTS FROM HERE       -->
+
+
+      <div class="col-md-5 container_checkout">
+
+        <section id="order-summary" data-subtotal="17.00" class:"">
+
+          <div class="checkout_format" >
+          <div class="underline">
+          <h3>Order Summary</h3>
+          </div>
+          <table class:"">
+            <tbody><tr class="subtotal">
+              <th>Subtotal</th>
+              <td>$ <%= @subtotal.round(2) %></td>
+            </tr>
+            <tr class="service">
+              <th>Service Fee <span>(9.00%)</span></th>
+              <td>$ <%= @service_fee.round(2) %> </td>
+            </tr>
+            <tr class="tax-and-fees" style="display:none;">
+              <th>Tax &amp; Fees</th>
+              <td>TBD</td>
+            </tr>
+            <tr class="delivery underline">
+              <th>Delivery</th>
+              <td><span class="blitz"></span>TBD</td>
+            </tr>
+
+            <tr class="discounts" style="display:none;">
+              <th>Discounts</th>
+              <td>TBD</td>
+            </tr>
+
+            <tr class="total underline">
+              <th class="estimated-label">Estimated Total</th>
+              <td>
+                <a href="#" data-toggle="popover" data-trigger="hover" data-placement="left" data-html="true" data-content="Your card may be temporarily authorized for more than your final order total. This will be adjusted when your order is complete." class="icon-info fee-breakdown" data-original-title="" title=""></a>
+                <span class="value"> $ <%= @total.round(2)%></span>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!--              CHECKOUT FUNCTION PART STARTS FROM HERE        -->
+
+
+          <%= f.button :submit, class: "btn btn-primary", value: "Get It Now"%>
+          <% end %>
+
         </div>
+
+        </section>
+
+
       </div>
     </div>
   </div>
+</div>
+
+<script>
+
+  document.ready function(){
+    $(".get-it-now").on("click"){
+
+    }
+  }
+</script>

@@ -13,7 +13,9 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
-@import "stores";
-@import "orders";
-@import "orderlines";
+@import "pages/stores";
+@import "pages/orders";
+@import "pages/orderlines";
+@import "pages/checkout_modals";
+@import "pages/checkout";
 

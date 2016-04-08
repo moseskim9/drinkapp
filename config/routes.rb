@@ -1,19 +1,6 @@
 Rails.application.routes.draw do
 
 
-  get 'addresses/index'
-
-  get 'addresses/show'
-
-  get 'addresses/new'
-
-  get 'addresses/create'
-
-  get 'addresses/edit'
-
-  get 'addresses/update'
-
-  get 'addresses/destroy'
 
   get 'users/show'
 
@@ -25,13 +12,15 @@ Rails.application.routes.draw do
 
   resources :users
   resources :stores do
+    resources :addresses
+
     resources :items do
       resources :order_lines
     end
 
-    get 'current_order'     => 'orders#index'
-    get 'checkout'    => 'orders#checkout'
-
+    get 'current_order'   => 'orders#index'
+    get 'checkout'        => 'orders#checkout'
+    resources :orders, only: [:show]
 
     collection do
       get 'search', to: "stores#search"
