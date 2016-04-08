@@ -41,5 +41,12 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @store = Store.find(params[:store_id])
+    @order = current_user.orders.find_by_store_id(@store)
+    @subtotal = @order.make_subtotal
+    @service_fee = @subtotal * 0.09
+    @total = @subtotal * 1.09
+    @address= Address.find_by_id(params[:id])
+    @user = current_user
   end
 end

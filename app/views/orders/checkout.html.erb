@@ -39,9 +39,11 @@
           <br>
           <br>
 
+<!-- options_from_collection_for_select(current_user.addresses, "id", "full_name") -->
+
 
         <%= simple_form_for [@store, @order], method: :get do |f| %>
-          <%= f.input :address_id, collection: current_user.addresses %>
+          <%= f.input :address_id, collection: current_user.addresses, label_method: :full_name, value_method: :id %>
 
 
 
@@ -52,10 +54,10 @@
         <!--              CREATE PAYMENT SECTION STARTS FROM HERE      -->
 
         <section id="payment-info" class="checkout_format">
-          <div class="underline">
+          <!-- <div class="underline">
             <h2>2. Enter Payment</h2>
           </div>
-
+ -->
         </section>
       </div>
 
