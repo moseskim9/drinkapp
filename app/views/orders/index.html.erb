@@ -38,7 +38,7 @@
             <div class="quantity-box">
             <td><span class="total"> $ <%= number_with_precision order_line.item.price, :precision => 2 %> </span></td>
             <td>
-              <input class="quantity" type="text" value=" <%= order_line.quantity %>">
+              <input class="quantity text-center" type="text" value=" <%= order_line.quantity %>">
             </td>
             <td><span class="total col_width"> $ <%= number_with_precision ((order_line.item.price) * (order_line.quantity)), :precision => 2 %> </span>
             </td>
