@@ -1,0 +1,24 @@
+<h1>Payments#new</h1>
+<p>Find me in app/views/payments/new.html.erb</p>
+
+
+<%= form_tag store_order_payments_path(@store, @order) do %>
+
+
+       <form action="" method="POST">
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_test_Rz7MUpvMbX8G8cZ6AyYFRP2G"
+              data-amount="2000"
+              data-name="Demo Site"
+              data-description="2 widgets ($20.00)"
+              data-image="/128x128.png"
+              data-locale="auto">
+
+            </script>
+          </form>
+
+<% end %>
+
+
+

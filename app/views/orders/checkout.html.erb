@@ -21,26 +21,22 @@
           <%= f.input :address_id, collection: current_user.addresses, label_method: :full_name, value_method: :id %>
 
 
-          <div class="dropdown checkout_format">
+        <div class="dropdown checkout_format">
           <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             Add a new address
             <span class="caret"></span>
           </a>
 
-        <ul class="dropdown-menu" aria-labelledby="dLabel">
-          <%= simple_form_for [@store, Address.new] do |f| %>
-            <%= f.input :street_name %>
-            <%= f.input :number %>
-            <%= f.input :city %>
-            <%= f.input :zip_code %>
-            <%#= f.input :store_id, as: :hidden ,input_html: {store_id: params[:store_id]} %>
-            <%= f.button :submit %>
-          <% end %>
-        </ul>
-
-
-
-
+          <ul class="dropdown-menu" aria-labelledby="dLabel">
+            <%= simple_form_for [@store, Address.new] do |f| %>
+              <%= f.input :street_name %>
+              <%= f.input :number %>
+              <%= f.input :city %>
+              <%= f.input :zip_code %>
+              <%#= f.input :store_id, as: :hidden ,input_html: {store_id: params[:store_id]} %>
+              <%= f.button :submit %>
+            <% end %>
+          </ul>
         </div>
 
 
@@ -99,9 +95,24 @@
 
           <!--              CHECKOUT FUNCTION PART STARTS FROM HERE        -->
           <br>
+          <% end %>
+
+          <%= form_tag store_order_payments_path(@store, @order) do %>
 
 
-          <%= f.button :submit, class: "btn btn-primary", value: "Get It Now"%>
+                 <form action="" method="POST">
+                      <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_test_Rz7MUpvMbX8G8cZ6AyYFRP2G"
+                        data-amount="2000"
+                        data-name="Demo Site"
+                        data-description="2 widgets ($20.00)"
+                        data-image="/128x128.png"
+                        data-locale="auto">
+
+                      </script>
+                    </form>
+
           <% end %>
 
         </div>

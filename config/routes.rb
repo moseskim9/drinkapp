@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root 'pages#home'
 
   resources :addresses
@@ -16,7 +17,10 @@ Rails.application.routes.draw do
 
     get 'current_order'   => 'orders#index'
     get 'checkout'        => 'orders#checkout'
-    resources :orders, only: [:show]
+    post 'checkout'        => 'orders#checkout'
+    resources :orders, only: [:show] do
+      resources :payments, only: [:new, :create]
+    end
 
     collection do
       get 'search', to: "stores#search"

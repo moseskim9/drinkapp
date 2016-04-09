@@ -13,6 +13,7 @@ gem 'devise'
 gem 'geocoder'
 gem "gmaps4rails"
 gem 'omniauth-facebook'
+gem 'stripe'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
