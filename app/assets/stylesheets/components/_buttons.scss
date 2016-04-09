@@ -1,3 +1,25 @@
+.btn-moses {
+  background: orange;
+  color: blue;
+
+  &:hover {
+    background: purple;
+    color: green;
+  }
+
+  &:focus {
+    background: pink;
+    color: red;
+  }
+
+  &:active {
+    background: yellow;
+    color: brown;
+  }
+
+
+}
+
 .btn-social, .btn-social-icon {
     position: relative;
     padding-left: 46px;
