@@ -92,6 +92,30 @@ stores = Store.create([
     postcode: "90027",
     city: "Los Angeles",
     country: "USA"
+  },
+  {
+    image: "http://cdn.visitwesthollywood.com/sites/default/master/files/zzdata-Urth-Caffe_bee37636-5056-a348-3a845e93a32c003c.jpg",
+    name: "Urth Cafe",
+    address: " 451 S Hewitt St Los Angeles,",
+    postcode: "90027",
+    city: "Los Angeles",
+    country: "USA"
+  },
+  {
+    image: "http://3apq7g38q3kw2yn3fx4bojii.wpengine.netdna-cdn.com/wp-content/uploads/2015/07/iced-coffee-750x500.jpg",
+    name: "Cafe Dulce",
+    address: " 134 Japanese Village Plz Bldg E Los Angeles",
+    postcode: "90027",
+    city: "Los Angeles",
+    country: "USA"
+  },
+  {
+    image: "https://media-cdn.tripadvisor.com/media/photo-s/08/f6/55/80/the-perch.jpg",
+    name: "Perch",
+    address: " 448 S Hill St Los Angeles",
+    postcode: "90027",
+    city: "Los Angeles",
+    country: "USA"
   }
 ])
 
@@ -327,7 +351,7 @@ beerbelly_items  = Item.create([
     store: beerbelly
   },
   {
-    name: "Harney & Sons Organica Green Tea w/ Ginko and Citrus(16 oz)",
+    name: "Harney & Sons Organica Green Tea",
     price: 4.00,
     store: beerbelly
   },

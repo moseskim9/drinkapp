@@ -1,0 +1,18 @@
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 22px;
+}
+/* line 31, /Users/moseskim/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_tables.scss */
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > th,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.4;
+  vertical-align: middle;
+  border-top: 1px solid #ddd;
+
+}
