@@ -1,13 +1,13 @@
 
 <div class="text-center">
-<h1>Users Edit</h1>
+  <h1>Users Edit</h1>
 </div>
 
 
 <div class="container add_item_format center_div">
-<%= simple_form_for @user do |f| %>
- <%= f.input :first_name %>
- <%= f.input :last_name %>
- <div class="add_item_button">  <%= f.button :submit %> </div>
- <% end %>
+   <%= simple_form_for @user do |f| %>
+   <%= f.input :first_name %>
+   <%= f.input :last_name %>
+   <div class="add_item_button">  <%= f.button :submit %> </div>
+   <% end %>
 </div>

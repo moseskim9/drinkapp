@@ -36,11 +36,11 @@
 
             </td>
             <div class="quantity-box">
-            <td><span class="total"> $ <%= order_line.item.price %> </span></td>
+            <td><span class="total"> $ <%= number_with_precision order_line.item.price, :precision => 2 %> </span></td>
             <td>
               <input class="quantity" type="text" value=" <%= order_line.quantity %>">
             </td>
-            <td><span class="total col_width"> $ <%= (order_line.item.price) * (order_line.quantity) %> </span>
+            <td><span class="total col_width"> $ <%= number_with_precision ((order_line.item.price) * (order_line.quantity)), :precision => 2 %> </span>
             </td>
             </div>
           </tr>
@@ -60,13 +60,13 @@
               </span>
               <ul>
             </td>
-            <td><span class="total"> Subtotal </span></td>
             <td>
-              <h2> </h2>
+            <td>
+              <span class="subtotal"> Subtotal: </span></td>
             </td>
 
 
-            <td><span class="total col_width;"> $ <%= @subtotal %> </span></td>
+            <td><span class="subtotal col_width;"> $ <%= number_with_precision @subtotal, :precision => 2 %> </span></td>
 
           </tr>
         </tbody>
@@ -105,7 +105,7 @@
             </td>
 
             <td class="" colspan="3">
-              <div class="final_button">
+              <div class="final_button_right checkout_button text-center">
               <%= link_to "Checkout", store_checkout_path(@store)  %>
               </div>
             </td>

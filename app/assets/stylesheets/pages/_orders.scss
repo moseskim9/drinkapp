@@ -12,10 +12,10 @@
 }
 
 .cart_format h2 {
-  color: rgba(100, 100, 100, 0.7);
+  color: rgba(1, 1, 1, 0.7);
   font-weight: 500;
   font-style: normal;
-  font-size: 15px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }
@@ -37,28 +37,37 @@
 .disclaimer {
   color: rgba(1, 1, 1, 0.7);
   font-weight: lighter;
-  font-style: normal;
-  font-size: 16px;
+  font-style: italic;
+  font-size: 13px;
   letter-spacing: 1.5px;
 }
 
 .total {
-  color: rgba(100, 100, 100, 0.7);
+  color: black;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+
+.subtotal {
+  color: black;
   font-weight: 500;
   font-style: normal;
   font-size: 15px;
   letter-spacing: 1.5px;
 }
 
+
 .item-summary {
-  font-size: 18px;
-  font-weight: lighter;
-  color: rgba(1, 1, 1, 0.7);
+  font-size: 15px;
+  font-weight: light;
+  color: rgba(100, 100, 100, 0.7);
   float: left;
 }
 
 .remove_button a {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 160;
   color: rgba(100, 100, 100, 0.7);
   float: left;

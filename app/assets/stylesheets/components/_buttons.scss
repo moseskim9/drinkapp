@@ -1,21 +1,12 @@
 .btn-moses {
-  background: orange;
-  color: blue;
+  background: #7FDBD4;
+  color: white;
 
   &:hover {
-    background: purple;
-    color: green;
+    background: #49ccc1;
+    color: white;
   }
 
-  &:focus {
-    background: pink;
-    color: red;
-  }
-
-  &:active {
-    background: yellow;
-    color: brown;
-  }
 
 
 }
@@ -62,4 +53,19 @@
 .text-center {
     text-align: center;
 }
+.final_button {
+  font-weight: bold;
+  vertical-align: top;
+}
+.final_button_right {
+  font-weight: bold;
+  vertical-align: top;
+}
+.final_button_right a{
+  font-weight: bold;
+  vertical-align: top;
+  color: black;
+}
+
+
 
