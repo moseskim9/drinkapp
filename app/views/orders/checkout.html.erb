@@ -1,14 +1,15 @@
-
-<div class="content">
-  <div class="container inner">
+<div class="">
+  <div class="container">
     <div class="row">
       <div class="col-md-7">
 
         <!--             CREATE ADDRESS SECTION STARTS FROM HERE       -->
 
-        <section id="address-book" class="checkout_format">
-          <div class="underline">
-            <h3>1. Enter Delivery Address</h3>
+        <section class="">
+          <div class="underline checkout_page_top_margin">
+            <div class="checkout_title">
+            <h2>1. Enter Delivery Address</h2>
+            </div>
           </div>
         </section>
 
@@ -16,15 +17,15 @@
 
 <!-- options_from_collection_for_select(current_user.addresses, "id", "full_name") -->
 
-
+        <div class="checkout_title">
         <%= simple_form_for [@store, @order], method: :get do |f| %>
-          <%= f.input :address_id, collection: current_user.addresses, label_method: :full_name, value_method: :id %>
+          <%= f.input :address_id, collection: current_user.addresses, label_method: :full_name, value_method: :id %> </div>
 
 
-        <div class="dropdown checkout_format">
+        <div class="dropdown address_add_format">
           <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            Add a new address
-            <span class="caret"></span>
+            <div class="">Add a new address <span class="caret"></span></div>
+
           </a>
 
           <ul class="dropdown-menu" aria-labelledby="dLabel">
@@ -59,23 +60,25 @@
         <section id="order-summary" data-subtotal="17.00" class:"">
 
           <div class="checkout_format" >
-          <div class="underline">
-          <h3>2. Order Summary</h3>
+          <div class="underline checkout_page_top_margin">
+          <div class="checkout_title">
+          <h2>2. Order Summary</h2>
+          </div>
           </div>
           <table class:"">
-            <tbody><tr class="subtotal">
+            <tbody><tr class="checkout_item_written">
               <th>Subtotal</th>
-              <td>$ <%= @subtotal.round(2) %></td>
+              <td>$ <%= number_with_precision @subtotal, :precision => 2 %></td>
             </tr>
-            <tr class="service">
-              <th>Service Fee <span>(9.00%)</span></th>
-              <td>$ <%= @service_fee.round(2) %> </td>
+            <tr class="checkout_item_written">
+              <th>Service Fee <span class="small_percentage_format">(9.00%)</span></th>
+              <td>$ <%= number_with_precision @service_fee, :precision => 2 %> </td>
             </tr>
             <tr class="tax-and-fees" style="display:none;">
               <th>Tax &amp; Fees</th>
               <td>TBD</td>
             </tr>
-            <tr class="delivery underline">
+            <tr class="checkout_item_written underline">
               <th>Delivery</th>
               <td><span class="blitz"></span>TBD</td>
             </tr>
@@ -84,11 +87,11 @@
               <td>TBD</td>
             </tr>
 
-            <tr class="total underline">
+            <tr class="checkout_item_written underline">
               <th class="estimated-label">Estimated Total</th>
               <td>
                 <a href="#" data-toggle="popover" data-trigger="hover" data-placement="left" data-html="true" data-content="Your card may be temporarily authorized for more than your final order total. This will be adjusted when your order is complete." class="icon-info fee-breakdown" data-original-title="" title=""></a>
-                <span class="value"> $ <%= @total.round(2)%></span>
+                <span class="value"> $ <%= number_with_precision @total, :precision => 2 %></span>
               </td>
             </tr>
           </tbody></table>
@@ -96,6 +99,9 @@
           <!--              CHECKOUT FUNCTION PART STARTS FROM HERE        -->
           <br>
           <% end %>
+
+
+
 
           <%= form_tag store_order_payments_path(@store, @order) do %>
 
@@ -125,11 +131,3 @@
   </div>
 </div>
 
-<script>
-
-  document.ready function(){
-    $(".get-it-now").on("click"){
-
-    }
-  }
-</script>

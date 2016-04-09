@@ -1,21 +1,66 @@
 
-// .checkout_text_format {
-//   color: rgba(100, 100, 100, 0.7);
-//   font-weight: 500;
-//   font-style: normal;
-//   font-size: 15px;
-//   text-transform: uppercase;
-//   letter-spacing: 1.5px;
-// }
+.checkout_item_written th{
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: 300;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
 
-// .checkout_text_format h2, h3 {
-//   color: rgba(100, 100, 100, 0.7);
-//   font-weight: 500;
-//   font-style: normal;
-//   font-size: 20px;
-//   text-transform: uppercase;
-//   letter-spacing: 1.5px;
-// }
+.checkout_item_written td{
+  float: right;
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: 300  ;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+
+.checkout_item_total_written td{
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+
+.checkout_title label {
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+
+.small_percentage_format {
+  font-size: 11px;
+}
+
+.checkout_title h2 {
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.address_add_format a {
+  color: #7fdbd4;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+
+.address_form_format input {
+  font-size: 100px;
+}
+
+.checkout_page_top_margin {
+margin-top: 10vh;
+
+}
 
 // .checkout_text_format th {
 //   float: left;
