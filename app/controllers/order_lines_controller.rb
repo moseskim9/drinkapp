@@ -19,7 +19,7 @@ class OrderLinesController < ApplicationController
     @store = Store.find(params[:store_id])
     @order = current_user.orders.where(store_id: @store).last
     if  !@order
-      @order = @store.orders.create(user: current_user)
+      @order = @store.orders.create(user: current_user, state: 'pending')
     end
 
 
