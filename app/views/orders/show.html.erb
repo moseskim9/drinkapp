@@ -1,8 +1,18 @@
 
-<div class="container">
+<div class="confirmation text-center">
 
-<h2>Thank you for your order <%= @user.email %> </h2>
-<h3>Your order id:  <%= @order.id %> </h3>
-<h3>Total amount: $ <%=@total.round(2)%> </h3>
+  <div class="confirmation-head">
+    <h1>Thank you for your order!<%= image_tag "Icon-check.png" %></h1>
+    <h6>Your order will be delivered to you as fast and fresh as possible. Please be aware that the courier may contact you at the destination!</h6>
+  </div>
+
+  <div class="confirmation-body">
+
+    <h4>Email: <%= @user.email %> </h4>
+    <h4>Your order id:  <%= @order.id %> </h4>
+    <h4>Total amount: $ <%=@total.round(2)%> </h4>
+
+  </div>
 
 </div>
+
