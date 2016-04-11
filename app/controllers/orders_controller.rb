@@ -46,7 +46,7 @@ class OrdersController < ApplicationController
     @subtotal = @order.make_subtotal
     @service_fee = @subtotal * 0.09
     @total = @subtotal * 1.09
-    @address= Address.find_by_id(params[:id])
+    @address= Address.find(params[:order][:address_id])
     @user = current_user
   end
 end

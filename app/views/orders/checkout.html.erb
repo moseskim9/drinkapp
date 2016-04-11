@@ -3,67 +3,105 @@
     <div class="row">
       <div class="col-md-7">
 
-        <!--             CREATE ADDRESS SECTION STARTS FROM HERE       -->
+        <!--             THIS HERE IS A TITLE       -->
 
         <section class="">
           <div class="underline checkout_page_top_margin">
             <div class="checkout_title">
-            <h2>1. Enter Delivery Address</h2>
+              <h2>1. Enter Delivery Address</h2>
             </div>
           </div>
         </section>
 
+        <!-- options_from_collection_for_select(current_user.addresses, "id", "full_name") -->
 
 
-<!-- options_from_collection_for_select(current_user.addresses, "id", "full_name") -->
+        <!--             SELECT ADDRESS FORM STARTS FROM HERE       -->
 
         <div class="checkout_title">
-        <%= simple_form_for [@store, @order], method: :get do |f| %>
-          <%= f.input :address_id, collection: current_user.addresses, label_method: :full_name, value_method: :id %> </div>
+          <%= simple_form_for [@store, @order], method: :get do |f| %>
+          <%= f.input :address_id, collection: current_user.addresses, label_method: :full_name, value_method: :id %>
+          <%= f.button :submit, class: "btn btn-primary hidden", value: "Get It Now"%>  <!-- HIDDEN FORM BUTTON -->
 
 
-        <div class="dropdown address_add_format">
-          <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <div class="">Add a new address <span class="caret"></span></div>
+          <!--             CUSTOM STRIPE BUTTON  AND STRIPE FORM STARTS FROM HERE       -->
 
-          </a>
+          <%= form_tag store_order_payments_path(@store, @order) do %>
 
-          <ul class="dropdown-menu" aria-labelledby="dLabel">
-            <%= simple_form_for [@store, Address.new] do |f| %>
-              <%= f.input :street_name %>
-              <%= f.input :number %>
-              <%= f.input :city %>
-              <%= f.input :zip_code %>
-              <%#= f.input :store_id, as: :hidden ,input_html: {store_id: params[:store_id]} %>
-              <%= f.button :submit %>
-            <% end %>
-          </ul>
+          <form action="" method="POST">
+
+            <button id="customButton" class="new_stripe_button">
+              <span style="display: block; color: black; font-size: 14px; font-weight: bold; float: left; background: #49CCC1;">
+                Pay now
+              </span>
+            </button>
+
+           <!--             ORIGINAL STRIPE BUTTON STARTS FROM HERE       -->
+
+            <link rel="stylesheet" href="https://checkout.stripe.com/v3/checkout/button.css"></link>
+
+            <script                                                                                       src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="pk_test_Rz7MUpvMbX8G8cZ6AyYFRP2G"
+            data-amount=""
+            data-name="DrincMe"
+            data-description="Payment for drinks"
+            data-image="/128x128.png"
+            data-locale="auto">
+
+            </script>
+          </form>
+
+        <% end %>
         </div>
+      <% end %>
 
+      <br>
+      <br>
 
-        <!--              CREATE PAYMENT SECTION STARTS FROM HERE      -->
+    <!--             ADD NEW ADDRESS  STARTS FROM HERE       -->
 
-        <section id="payment-info" class="checkout_format">
-          <!-- <div class="underline">
-            <h2>2. Enter Payment</h2>
-          </div>
- -->
-        </section>
+      <div class="dropdown address_add_format">
+        <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <div class="">Add a new address <span class="caret"></span></div>
+
+        </a>
+
+        <ul class="dropdown-menu" aria-labelledby="dLabel">
+          <%= simple_form_for [@store, Address.new] do |f| %>
+          <%= f.input :street_name %>
+          <%= f.input :number %>
+          <%= f.input :city %>
+          <%= f.input :zip_code %>
+          <%#= f.input :store_id, as: :hidden ,input_html: {store_id: params[:store_id]} %>
+          <%= f.button :submit %>
+          <% end %>
+        </ul>
       </div>
 
 
-      <!--              ORDER SUMMARY STARTS FROM HERE       -->
+      <!--              CREATE PAYMENT SECTION STARTS FROM HERE      -->
 
-
-      <div class="col-md-5 container_checkout">
-
-        <section id="order-summary" data-subtotal="17.00" class:"">
-
-          <div class="checkout_format" >
-          <div class="underline checkout_page_top_margin">
-          <div class="checkout_title">
-          <h2>2. Order Summary</h2>
+      <section id="payment-info" class="checkout_format">
+          <!-- <div class="underline">
+            <h2>2. Enter Payment</h2>
           </div>
+        -->
+      </section>
+    </div>
+
+
+    <!--              ORDER SUMMARY STARTS FROM HERE       -->
+
+
+    <div class="col-md-5 container_checkout">
+
+      <section id="order-summary" data-subtotal="17.00" class:"">
+
+        <div class="checkout_format" >
+          <div class="underline checkout_page_top_margin">
+            <div class="checkout_title">
+              <h2>2. Order Summary</h2>
+            </div>
           </div>
           <table class:"">
             <tbody><tr class="checkout_item_written">
@@ -98,36 +136,18 @@
 
           <!--              CHECKOUT FUNCTION PART STARTS FROM HERE        -->
           <br>
-          <% end %>
 
 
 
-
-          <%= form_tag store_order_payments_path(@store, @order) do %>
-
-
-                 <form action="" method="POST">
-                      <script
-                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="pk_test_Rz7MUpvMbX8G8cZ6AyYFRP2G"
-                        data-amount="2000"
-                        data-name="Demo Site"
-                        data-description="2 widgets ($20.00)"
-                        data-image="/128x128.png"
-                        data-locale="auto">
-
-                      </script>
-                    </form>
-
-          <% end %>
-
-        </div>
-
-        </section>
 
 
       </div>
-    </div>
+
+    </section>
+
+
   </div>
+</div>
+</div>
 </div>
 
