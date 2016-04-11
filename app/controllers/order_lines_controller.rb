@@ -11,6 +11,7 @@ class OrderLinesController < ApplicationController
     @item = Item.find(params[:item_id])
     @store = @item.store
     @orderline = @item.order_lines.new
+    @orderline.quantity = 1
 
     render layout: nil
   end
@@ -26,9 +27,13 @@ class OrderLinesController < ApplicationController
     @order_line = @order.order_lines.build(order_line_params)
     @order_line.item_id = params[:item_id]
     if @order_line.save
-      redirect_to store_path(@store)
+      redirect_to store_path(@store), notice: "We got your beer"
     else
+      @item = Item.find(params[:item_id])
+      @store = @item.store
+      @orderline = @item.order_lines.new
       render :new
+      #redirect_to new_store_item_order_line_path(@store, params[:item_id])
     end
   end
 

@@ -9,9 +9,10 @@
   <div class="confirmation-body">
 
     <h4>Email: <%= @user.email %> </h4>
+    <h4>Your shipping address: <%= @address.number %> <%= @address.street_name %> <%= @address.city %>
+    </h4>
     <h4>Your order id:  <%= @order.id %> </h4>
     <h4>Total amount: $ <%=@total.round(2)%> </h4>
-
   </div>
 
 </div>
