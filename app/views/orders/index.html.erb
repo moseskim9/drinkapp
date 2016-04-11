@@ -28,12 +28,10 @@
 
 
               <div class="item-summary">
-                Special Instruction:
+                Special Instruction: <%= order_line.special_instruction %>
                </div>
+
                 <div class="remove_button"><%= link_to "Remove", store_item_order_line_path(order_line.item.store, order_line.item, order_line), method: :delete %>
-                </div>
-                <div class="special_needs">
-                  <%= order_line.special_instruction %>
                 </div>
 
 
