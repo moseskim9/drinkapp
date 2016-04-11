@@ -18,12 +18,36 @@
 
         <!--             SELECT ADDRESS FORM STARTS FROM HERE       -->
 
+
+        <div class="dropdown address_add_format">
+          <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <div class="">Add a new address <span class="caret"></span></div>
+
+          </a>
+
+          <ul class="dropdown-menu" aria-labelledby="dLabel">
+            <%= simple_form_for [@store, Address.new] do |f| %>
+            <%= f.input :number %>
+            <%= f.input :street_name %>
+            <%= f.input :city %>
+            <%= f.input :zip_code %>
+            <%#= f.input :store_id, as: :hidden ,input_html: {store_id: params[:store_id]} %>
+            <%= f.button :submit %>
+            <% end %>
+          </ul>
+        </div>
+
         <div class="checkout_title">
+
+
           <%= simple_form_for [@store, @order], html: { method: "patch", id: "pay-form" } do |f| %>
             <%= f.input :address_id, collection: current_user.addresses, label_method: :full_name, value_method: :id %>
 
-            <%= f.button :submit, id: "customButton", class: "btn btn-primary new_stripe_button", value: "Get It Now"%>  <!-- HIDDEN FORM BUTTON -->
-          <% end %>
+
+
+
+            <br>
+
 
           <!--             CUSTOM STRIPE BUTTON  AND STRIPE FORM STARTS FROM HERE       -->
 
@@ -61,25 +85,8 @@
       <br>
 
 
-    <!--             ADD NEW ADDRESS  STARTS FROM HERE       -->
 
-      <div class="dropdown address_add_format">
-        <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <div class="">Add a new address <span class="caret"></span></div>
 
-        </a>
-
-        <ul class="dropdown-menu" aria-labelledby="dLabel">
-          <%= simple_form_for [@store, Address.new] do |f| %>
-          <%= f.input :number %>
-          <%= f.input :street_name %>
-          <%= f.input :city %>
-          <%= f.input :zip_code %>
-          <%#= f.input :store_id, as: :hidden ,input_html: {store_id: params[:store_id]} %>
-          <%= f.button :submit %>
-          <% end %>
-        </ul>
-      </div>
 
 
       <!--              CREATE PAYMENT SECTION STARTS FROM HERE      -->
@@ -150,7 +157,9 @@
 
 
   </div>
-</div>
+    <%= f.button :submit, id: "customButton", class: "btn btn-primary new_stripe_button", value: "Get It Now"%>  <!-- HIDDEN FORM BUTTON -->
+  <% end %>
+
 </div>
 </div>
 
