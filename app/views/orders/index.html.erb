@@ -1,6 +1,6 @@
 
 <div class="">
-  <div class="container-inner">
+  <div class="container">
     <section data-place-uuid="3ae92a94-d3b9-4656-82ec-e6d9838c274a">
     <div class="cart_format">
     <div class="cart_underline">
@@ -10,8 +10,8 @@
       <table class="table">
         <thead>
           <tr>
-            <th>Items</th>
-            <th>Price</th>
+            <th> Items  </th>
+            <th> Price  </th>
             <th>Quantity</th>
             <th class="col_width">Total</th>
           </tr>
@@ -28,14 +28,16 @@
 
 
               <div class="item-summary">
-                Special Instruction: <%= order_line.special_instruction %>
-              </div>
-              <div class="remove_button"><%= link_to "Remove", store_item_order_line_path(order_line.item.store, order_line.item, order_line), method: :delete %>
-              </div>
+                Special Instruction:
+               </div>
+                <div class="remove_button"><%= link_to "Remove", store_item_order_line_path(order_line.item.store, order_line.item, order_line), method: :delete %>
+                </div>
+                <div class="special_needs">
+                  <%= order_line.special_instruction %>
+                </div>
 
 
             </td>
-            <div class="quantity-box">
             <td>
               <span class="total"> $ <%= number_with_precision order_line.item.price, :precision => 2 %>
               </span>
@@ -49,7 +51,6 @@
               <span class="total col_width"> $ <%= number_with_precision ((order_line.item.price) * (order_line.quantity)), :precision => 2 %>
               </span>
             </td>
-            </div>
           </tr>
         </tbody>
         <% end %>
