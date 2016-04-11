@@ -1,19 +1,19 @@
 
-<div class="confirmation text-center">
 
-  <div class="confirmation-head">
-    <h1>Thank you for your order!<%= image_tag "Icon-check.png" %></h1>
-    <h6>Your order will be delivered to you as fast and fresh as possible. Please be aware that the courier may contact you at the destination!</h6>
+  <div class="confirmation text-center">
+
+    <div class="confirmation-head">
+      <h1>Thank you for your order!<%= image_tag "Icon-check.png" %></h1>
+      <h6>Your order will be delivered to you as fast and fresh as possible. Please be aware that the courier may contact you at the destination!</h6>
+    </div>
+
+    <div class="confirmation-body">
+
+      <h4>Email: <%= @user.email %> </h4>
+      <h4>Your shipping address: <%= @address.number %> <%= @address.street_name %> <%= @address.city %>
+      </h4>
+      <h4>Your order id:  <%= @order.id %> </h4>
+      <h4>Total amount: $ <%=@total.round(2)%> </h4>
+    </div>
+
   </div>
-
-  <div class="confirmation-body">
-
-    <h4>Email: <%= @user.email %> </h4>
-    <h4>Your shipping address: <%= @address.number %> <%= @address.street_name %> <%= @address.city %>
-    </h4>
-    <h4>Your order id:  <%= @order.id %> </h4>
-    <h4>Total amount: $ <%=@total.round(2)%> </h4>
-  </div>
-
-</div>
-

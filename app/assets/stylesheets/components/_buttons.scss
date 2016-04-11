@@ -6,9 +6,10 @@
     background: #49ccc1;
     color: white;
   }
+}
 
-
-
+#customButton {
+  margin-left: 15px;
 }
 
 .btn-social, .btn-social-icon {
@@ -62,7 +63,7 @@
   vertical-align: top;
 }
 .final_button_right a{
-  font-weight: bold;
+  font-weight: light;
   vertical-align: top;
   color: black;
 }
