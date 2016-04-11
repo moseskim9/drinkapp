@@ -32,7 +32,11 @@
       <% @store.items.each do |item| %>
       <div class= "col-xs-12 col-md-6">
         <div class="item">
+        <% if current_user %>
           <%= link_to item.name, new_store_item_order_line_path(@store, item), { class: "item-link", "data-target": "#myModal", "data-toggle":"modal"} %>
+        <% else %>
+          <%= link_to item.name, new_user_session_path(store_id: @store.id) %>
+        <% end %>
         </div>
         <div class="price">
           $<%= number_with_precision item.price, :precision => 2 %>
