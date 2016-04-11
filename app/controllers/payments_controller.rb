@@ -28,7 +28,6 @@ class PaymentsController < ApplicationController
     )
 
     @order.update(payment: charge.to_json, state: 'paid')
-
     redirect_to store_order_path(@store, @order)
 
   rescue Stripe::CardError => e
