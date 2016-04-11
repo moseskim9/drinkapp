@@ -18,7 +18,9 @@ Rails.application.routes.draw do
     get 'current_order'   => 'orders#index'
     get 'checkout'        => 'orders#checkout'
     post 'checkout'        => 'orders#checkout'
-    resources :orders, only: [:show] do
+
+
+    resources :orders, only: [:show, :update] do
       resources :payments, only: [:new, :create]
     end
 
