@@ -19,44 +19,47 @@
         <!--             SELECT ADDRESS FORM STARTS FROM HERE       -->
 
         <div class="checkout_title">
-          <%= simple_form_for [@store, @order], method: :get do |f| %>
-          <%= f.input :address_id, collection: current_user.addresses, label_method: :full_name, value_method: :id %>
-          <%= f.button :submit, class: "btn btn-primary hidden", value: "Get It Now"%>  <!-- HIDDEN FORM BUTTON -->
+          <%= simple_form_for [@store, @order], html: { method: "patch", id: "pay-form" } do |f| %>
+            <%= f.input :address_id, collection: current_user.addresses, label_method: :full_name, value_method: :id %>
 
+            <%= f.button :submit, id: "customButton", class: "btn btn-primary new_stripe_button", value: "Get It Now"%>  <!-- HIDDEN FORM BUTTON -->
+          <% end %>
 
           <!--             CUSTOM STRIPE BUTTON  AND STRIPE FORM STARTS FROM HERE       -->
 
-          <%= form_tag store_order_payments_path(@store, @order) do %>
+          <%#= form_tag store_order_payments_path(@store, @order) do %>
 
-          <form action="" method="POST">
+            <!-- <form action= "store_order_path(@store, @order)" method="POST">
 
-            <button id="customButton" class="new_stripe_button">
-              <span style="display: block; color: black; font-size: 14px; font-weight: bold; float: left; background: #49CCC1;">
-                Pay now
-              </span>
-            </button>
+              <button id="customButton" class="new_stripe_button">
+                <span style="display: block; color: black; font-size: 14px; font-weight: bold; float: left; background: #49CCC1;">
+                  Pay now
+                </span>
+              </button> -->
 
-           <!--             ORIGINAL STRIPE BUTTON STARTS FROM HERE       -->
 
-            <link rel="stylesheet" href="https://checkout.stripe.com/v3/checkout/button.css"></link>
 
-            <script                                                                                       src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="pk_test_Rz7MUpvMbX8G8cZ6AyYFRP2G"
-            data-amount=""
-            data-name="DrincMe"
-            data-description="Payment for drinks"
-            data-image="/128x128.png"
-            data-locale="auto">
 
-            </script>
-          </form>
+               <!--             ORIGINAL STRIPE BUTTON STARTS FROM HERE       -->
+              <!-- <link rel="stylesheet" href="https://checkout.stripe.com/v3/checkout/button.css"></link> -->
+              <!-- <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_test_Rz7MUpvMbX8G8cZ6AyYFRP2G"
+              data-amount=""
+              data-name="DrincMe"
+              data-description="Payment for drinks"
+              data-image="/128x128.png"
+              data-locale="auto">
 
-        <% end %>
+              </script> -->
+            <!-- </form> -->
+          <%# end %>
         </div>
-      <% end %>
 
       <br>
       <br>
+      <br>
+      <br>
+
 
     <!--             ADD NEW ADDRESS  STARTS FROM HERE       -->
 
@@ -68,8 +71,8 @@
 
         <ul class="dropdown-menu" aria-labelledby="dLabel">
           <%= simple_form_for [@store, Address.new] do |f| %>
-          <%= f.input :street_name %>
           <%= f.input :number %>
+          <%= f.input :street_name %>
           <%= f.input :city %>
           <%= f.input :zip_code %>
           <%#= f.input :store_id, as: :hidden ,input_html: {store_id: params[:store_id]} %>
@@ -151,3 +154,39 @@
 </div>
 </div>
 
+<% content_for :after_js do %>
+
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+
+  <script>
+    var handler = StripeCheckout.configure({
+      key: 'pk_test_Rz7MUpvMbX8G8cZ6AyYFRP2G',
+      image: '/img/documentation/checkout/marketplace.png',
+      locale: 'auto',
+      token: function(token) {
+
+
+       var form = $("#pay-form");
+       form.append($('<input type="hidden" name="stripeToken" />').val(token.id));
+
+        form.get(0).submit();
+      }
+    });
+
+    $('#customButton').on('click', function(e) {
+      // Open Checkout with further options
+      handler.open({
+        name: 'Stripe.com',
+        description: '2 widgets',
+        amount: 2000
+      });
+      e.preventDefault();
+    });
+
+    // Close Checkout on page navigation
+    $(window).on('popstate', function() {
+      handler.close();
+    });
+  </script>
+
+<% end %>
