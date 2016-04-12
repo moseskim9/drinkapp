@@ -42,7 +42,7 @@ private
   end
 
   def address_params
-    params.require(:address).permit(:street_name, :number, :city, :state, :zip_code, :country, :store_id)
+    params.require(:address).permit(:number, :street_name, :city, :state, :zip_code, :country, :store_id)
   end
 
 end
