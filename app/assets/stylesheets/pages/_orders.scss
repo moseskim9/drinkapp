@@ -74,8 +74,17 @@
   color: rgba(100, 100, 100, 0.7);
   float: left;
   color: #7fdbd4;
-  display: inline-block;
 }
+
+.remove_button a:hover {
+  font-size: 15px;
+  font-weight: 160;
+  color: rgba(100, 100, 100, 0.7);
+  float: left;
+  color: #7fdbd4;
+  margin-bottom: 5px;
+}
+
 
 .final_button a {
   color: #7fdbd4;
@@ -84,6 +93,10 @@
   font-weight: 280;
   letter-spacing: 1.5px;
   text-decoration: none;
+}
+
+.final_button {
+  vertical-align: top;
 }
 
 .col_width {
@@ -96,3 +109,55 @@
   margin-bottom: 5px;
 }
 
+.new_checkout_button{
+  margin-top: 1.5vh;
+  background: #49CCC1;
+  float: left;
+  font-weight: lighter;
+  letter-spacing: 1.5px;
+  vertical-align: center;
+  padding: 2vh 61px;
+  border: 0px;
+  min-height: 8vh;
+  max-height: 8vh;
+
+}
+
+
+.new_checkout_button a {
+  color: white;
+  text-decoration: none;
+}
+
+
+.input_checkout_button input{
+  margin-top: 1.5vh;
+  background: #49CCC1;
+  font-weight: lighter;
+  letter-spacing: 1.5px;
+  vertical-align: center;
+  padding: 2vh 61px;
+  border: 0px;
+  min-height: 8vh;
+  max-height: 8vh;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+
+}
+
+.input_checkout_button input:hover{
+  margin-top: 1.5vh;
+  background: #2381D0;
+  font-weight: lighter;
+  letter-spacing: 1.5px;
+  vertical-align: center;
+  padding: 2vh 61px;
+  border: 0px;
+  min-height: 8vh;
+  max-height: 8vh;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+
+}
