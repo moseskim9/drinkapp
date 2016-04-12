@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
       store_id = URI.parse(request.referrer).query.split('=').last
       store_url(store_id)
     else
-      request.env['omniauth.origin'] || stored_location_for(resource)
+      request.env['omniauth.origin'] || stored_location_for(resource) || root_path
     end
   end
 
