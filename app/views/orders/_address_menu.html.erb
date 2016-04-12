@@ -1,0 +1,9 @@
+<p> SOME TEXT HERE </p>
+
+
+
+
+ <div class="checkout_title">
+        <%= simple_form_for [@store, @order], method: :get do |f| %>
+          <%= f.input :address_id, collection: current_user.addresses, label_method: :full_name, value_method: :id %> </div>
+          <%=end %>
