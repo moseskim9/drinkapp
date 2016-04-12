@@ -88,11 +88,12 @@
 
 .final_button a {
   color: #7fdbd4;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: lighter;
   font-weight: 280;
   letter-spacing: 1.5px;
   text-decoration: none;
+  text-align: top;
 }
 
 .final_button {
@@ -120,7 +121,6 @@
   border: 0px;
   min-height: 8vh;
   max-height: 8vh;
-
 }
 
 
@@ -136,14 +136,15 @@
   font-weight: lighter;
   letter-spacing: 1.5px;
   vertical-align: center;
-  padding: 2vh 61px;
+  padding: 10px 61px;
   border: 0px;
-  min-height: 8vh;
-  max-height: 8vh;
+  min-height: 40px;
+  max-height: 40px;
   border-radius: 4px;
   color: white;
   font-size: 16px;
-
+  position: relative;
+  top: 10px;
 }
 
 .input_checkout_button input:hover{
@@ -154,10 +155,9 @@
   vertical-align: center;
   padding: 2vh 61px;
   border: 0px;
-  min-height: 8vh;
-  max-height: 8vh;
+  min-height: 40px;
+  max-height: 40px;
   border-radius: 4px;
   color: white;
   font-size: 16px;
-
 }
