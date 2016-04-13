@@ -1,9 +1,11 @@
 .btn-moses {
-  background: #7FDBD4;
+  border-radius: 0px;
+  background: #55dbcd;
   color: white;
 
   &:hover {
-    background: #49ccc1;
+    border-radius: 0px;
+    background: darken(#55dbcd, 10%);
     color: white;
   }
 }
@@ -72,3 +74,32 @@
 
 
 
+.checkout-btn {
+  display: flex;
+  background: darken(#55dbcd, 10%);
+  height: 40px;
+  color: white;
+  text-decoration: none;
+  transform: scale(1);
+  transition: .15s ease transform;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+    background: #55dbcd;
+    transform: scale(1.1)
+  }
+
+  span:first-child {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  span:last-child {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.08);
+  }
+}

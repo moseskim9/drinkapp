@@ -23,11 +23,12 @@ class OrderLinesController < ApplicationController
       @order = @store.orders.create(user: current_user, state: 'pending')
     end
 
-
+    @item = Item.find(params[:item_id])
     @order_line = @order.order_lines.build(order_line_params)
     @order_line.item_id = params[:item_id]
     if @order_line.save
-      redirect_to store_path(@store), notice: "We got your beer"
+      flash[:notice] = "#{@item.name} has been added to cart"
+      redirect_to store_path(@store)
     else
       @item = Item.find(params[:item_id])
       @store = @item.store

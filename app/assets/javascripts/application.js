@@ -21,3 +21,18 @@ $(".item-link").on("show.bs.modal", function(e) {
     var link = $(e.relatedTarget);
     $(this).find(".modal-body").load(link.attr("href"));
 });
+
+
+
+  $(document).ready(function(){
+
+
+    //$(".alert-dismissible").removeClass("hidden").slideDown("slow")
+
+    $(".alert-dismissible").on("click",function (e) {
+        $(this).slideUp('slow');
+    });
+
+
+  })
+
