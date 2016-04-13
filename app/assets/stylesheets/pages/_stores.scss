@@ -46,13 +46,24 @@
   margin-bottom: 5px;
   float: left;
   text-decoration: none;
+  margin-top: 20px;
+}
+
+.highlight {
+  border-bottom: 1px solid #fff;
+}
+
+.highlight:hover {
+  background-color: #F4F8F9;
+  border-bottom: 1px solid #55DBCD;
+
 }
 
 .item a:hover {
   font-size: 15px;
   font-weight: normal;
   color: rgba(20, 20, 20, 0.7);
-  margin-bottom: 20px;
+  margin-bottom: 17px;
   float: left;
   text-decoration: none;
 }
@@ -62,7 +73,8 @@
   color: rgba(100, 100, 100, 0.7);
   font-size: 15px;
   font-weight: light;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 17px;
 }
 
 .wrapper {
