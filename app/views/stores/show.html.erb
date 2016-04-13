@@ -32,7 +32,7 @@
     <div class="row">
       <% @store.items.each do |item| %>
       <div class= "col-xs-12 col-md-6 highlight">
-        <div class="item">
+        <div class="store_item">
         <% if current_user %>
           <%= link_to item.name, new_store_item_order_line_path(@store, item), { class: "item-link", "data-target": "#myModal", "data-toggle":"modal"} %>
         <% else %>

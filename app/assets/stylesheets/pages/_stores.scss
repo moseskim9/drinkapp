@@ -46,7 +46,16 @@
   margin-bottom: 5px;
   float: left;
   text-decoration: none;
-  margin-top: 20px;
+}
+
+.store_item a {
+  font-size: 15px;
+  font-weight: light;
+  color: rgba(20, 20, 20, 0.7);
+  margin-bottom: 5px;
+  float: left;
+  text-decoration: none;
+  margin-top: 10px;
 }
 
 .highlight {
@@ -63,7 +72,6 @@
   font-size: 15px;
   font-weight: normal;
   color: rgba(20, 20, 20, 0.7);
-  margin-bottom: 17px;
   float: left;
   text-decoration: none;
 }
@@ -73,8 +81,8 @@
   color: rgba(100, 100, 100, 0.7);
   font-size: 15px;
   font-weight: light;
-  margin-top: 20px;
-  margin-bottom: 17px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .wrapper {
