@@ -8,9 +8,11 @@ class StoresController < ApplicationController
   def show
     @item = @store.items
     @order_quantity = 0
-    if current_user.orders.find_by_store_id(@store.id).nil? == false
-      current_user.orders.find_by_store_id(@store.id).order_lines.each do |order_line|
-        @order_quantity += order_line.quantity
+    if current_user.nil? == false
+      if current_user.orders.find_by_store_id(@store.id).nil? == false
+        current_user.orders.find_by_store_id(@store.id).order_lines.each do |order_line|
+          @order_quantity += order_line.quantity
+        end
       end
     end
     @order_quantity
