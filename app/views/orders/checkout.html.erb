@@ -41,7 +41,7 @@
 
 
           <%= simple_form_for [@store, @order], html: { method: "patch", id: "pay-form" } do |f| %>
-            <%= f.input :address_id, collection: current_user.addresses, label_method: :full_name, value_method: :id %>
+            <%= f.input :address_id, validates: { presence: true }, collection: current_user.addresses, label_method: :full_name, value_method: :id, id: 'order_address_id',  :prompt => 'Select an address' %>
 
 
 
@@ -157,11 +157,14 @@
 
 
   </div>
+    <button id='placeholder_button' class="btn btn-primary new_stripe_button disabled hidden_button_margin hidden">Get It Now</button>
     <%= f.button :submit, id: "customButton", class: "btn btn-primary new_stripe_button", value: "Get It Now"%>  <!-- HIDDEN FORM BUTTON -->
   <% end %>
 
 </div>
 </div>
+
+<!-- THIS CODE BELOW IS FOR STRIPE FUNCTIONALITY  -->
 
 <% content_for :after_js do %>
 
@@ -197,5 +200,29 @@
       handler.close();
     });
   </script>
+
+<!-- THIS CODE BELOW IS JS TO CHANGE BUTTON WHEN ORDER IS NOT SELECTED  -->
+
+<script>
+  $(document).ready(function(){
+    var addr = $(" #order_address_id option:selected").text();
+    if (addr == 'Select an address') {
+      $('#placeholder_button').removeClass('hidden');
+      $('#customButton').addClass('hidden');
+    }
+
+
+    $('#order_address_id').change(function(){
+      var addr = $(" #order_address_id option:selected").text();
+      if (addr == 'Select an address') {
+        $('#placeholder_button').removeClass('hidden');
+        $('#customButton').addClass('hidden');
+      }else{
+        $('#placeholder_button').addClass('hidden');
+        $('#customButton').removeClass('hidden');
+      }
+    });
+  });
+</script>
 
 <% end %>
