@@ -1,0 +1,16 @@
+.alert {
+    border: none;
+}
+.alert-dismissable .close, .alert-dismissible .close {
+    position: absolute;
+    top: 22px;
+}
+
+.notice-text{
+    font-size: 18px;
+    padding: 24px;
+    display: block;
+}
+.alert-info {
+  background: #55dbcd;
+}

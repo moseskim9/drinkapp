@@ -132,15 +132,15 @@
 
 .input_checkout_button input{
   margin-top: 1.5vh;
-  background: #49CCC1;
-  font-weight: lighter;
+  background: #55dbcd;
+  font-weight: 300;
+  font-weight: light;
   letter-spacing: 1.5px;
   vertical-align: center;
   padding: 10px 61px;
   border: 0px;
   min-height: 40px;
   max-height: 40px;
-  border-radius: 4px;
   color: white;
   font-size: 16px;
   position: relative;
@@ -149,15 +149,14 @@
 
 .input_checkout_button input:hover{
   margin-top: 1.5vh;
-  background: #2381D0;
-  font-weight: lighter;
+  background: darken(#55dbcd, 10%);
+  font-weight: light;
   letter-spacing: 1.5px;
   vertical-align: center;
   padding: 10px 61px;
   border: 0px;
   min-height: 40px;
   max-height: 40px;
-  border-radius: 4px;
   color: white;
   font-size: 16px;
 }

@@ -77,4 +77,8 @@ class OrdersController < ApplicationController
     # @address= Address.find(params[:order][:address_id])
     @user = current_user
   end
+
+   def current_order
+   orders.last ? orders.last : nil
+  end
 end

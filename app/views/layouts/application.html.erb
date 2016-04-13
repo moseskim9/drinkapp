@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Drinkapp</title>
+  <%= favicon_link_tag 'drink-icon.png' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,10 +11,10 @@
 <body class="Site <%= "#{params[:controller]}-#{params[:action]}" %>">
 
 <%= render 'shared/navbar' %>
+<%= render 'shared/flashes' %>
 <main class="Site-content">
   <%= yield %>
 </main>
-
 <%= render 'shared/footer' %>
 
 <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>

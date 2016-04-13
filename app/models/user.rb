@@ -9,9 +9,6 @@ class User < ActiveRecord::Base
  has_many :orders
  has_many :addresses
 
- def current_order
-   orders.last ? orders.last : nil
- end
 
  def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
