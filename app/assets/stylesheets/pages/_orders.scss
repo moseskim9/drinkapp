@@ -94,6 +94,8 @@
   letter-spacing: 1.5px;
   text-decoration: none;
   text-align: top;
+  position: relative;
+  top: 7px;
 }
 
 .final_button {
@@ -159,4 +161,33 @@
   max-height: 40px;
   color: white;
   font-size: 16px;
+}
+
+.add_address_form_format{
+  width: 250px;
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-left: 25px;
+}
+
+.address_form_margin input {
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+.address_form_margin button {
+  margin-left: 25px;
+  margin-bottom: 20px
+}
+
+.width_200 input {
+  width: 200px;
+}
+
+.add_address_form_format label {
+  margin-left: 25px;
 }

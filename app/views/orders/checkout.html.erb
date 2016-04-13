@@ -25,14 +25,14 @@
 
           </a>
 
-          <ul class="dropdown-menu" aria-labelledby="dLabel">
+          <ul class="dropdown-menu add_address_form_format address_form_margin" aria-labelledby="dLabel"><div class="new_order_line address_form_margin width_200">
             <%= simple_form_for [@store, Address.new] do |f| %>
             <%= f.input :number %>
             <%= f.input :street_name %>
             <%= f.input :city %>
-            <%= f.input :zip_code %>
+            <%= f.input :zip_code %> </div>
             <%#= f.input :store_id, as: :hidden ,input_html: {store_id: params[:store_id]} %>
-            <%= f.button :submit %>
+            <%= f.button :submit, class: 'btn-moses address_form_margin' %>
             <% end %>
           </ul>
         </div>
