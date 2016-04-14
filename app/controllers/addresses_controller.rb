@@ -10,6 +10,7 @@ class AddressesController < ApplicationController
   def new
     @user = current_user
     @address = @user.addresses.new
+
   end
 
   def create
