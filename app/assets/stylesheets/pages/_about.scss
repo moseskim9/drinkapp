@@ -1,0 +1,21 @@
+
+.about_img_size{
+    max-height: 175px;
+    max-width: 175px;
+}
+.about-container {
+  display:flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.text-format p {
+  color: black;
+  font-size: 15px;
+  font-weight: 200;
+  color: rgba(20, 20, 20, 0.7);
+}
+
+.card_margin_top_about {
+  margin-top: 40px;
+}
