@@ -73,15 +73,16 @@ class OrdersController < ApplicationController
     @order = current_user.orders.find_by_store_id(@store)
     @subtotal = @order.make_subtotal
     @order_quantity = 0
-
     current_user.orders.find_by_store_id(@store.id).order_lines.each do |order_line|
       @order_quantity += order_line.quantity
     end
     @order_quantity
     @delivery_fee = @order_quantity * 2
     @total = (@delivery_fee + @subtotal)
+    @service_fee = @total * 0.09
     # @service_fee = @total * 0.09
     @finaltotal = @total * 1.09
+
     # @finaltotal = @total + @service_fee
     @addresses = current_user.addresses.all
   end
