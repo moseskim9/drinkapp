@@ -27,7 +27,7 @@ class OrderLinesController < ApplicationController
     @order_line = @order.order_lines.build(order_line_params)
     @order_line.item_id = params[:item_id]
     if @order_line.save
-      flash[:notice] = "#{@item.name} has been added to cart"
+      flash[:notice] = "#{order_line_params["quantity"]} #{@item.name} has been added to cart"
       redirect_to store_path(@store)
     else
       @item = Item.find(params[:item_id])

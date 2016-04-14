@@ -25,10 +25,21 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     @store = Store.find(params[:store_id])
+    @order = current_user.orders.find_by_store_id(@store)
+    @subtotal = @order.make_subtotal
+    @order_quantity = 0
+
+    current_user.orders.find_by_store_id(@store.id).order_lines.each do |order_line|
+      @order_quantity += order_line.quantity
+    end
+    @order_quantity
+    @delivery_fee = @order_quantity * 2
+    @total = (@delivery_fee + @subtotal)
+    # @service_fee = @total * 0.09
+    @finaltotal = ((@total * 1.09) * 100).to_i
 
     # address_id = params[:order][:address_id]
 
-    @amount = @order.make_subtotal * 100
 
     customer = Stripe::Customer.create(
       source: params[:stripeToken],
@@ -38,7 +49,7 @@ class OrdersController < ApplicationController
 
     charge = Stripe::Charge.create(
       customer: customer.id,
-      amount: @amount,        # in cents
+      amount: @finaltotal,        # in cents
       description:  "Payment for drink order",
       currency:     'eur'
     )
@@ -61,24 +72,38 @@ class OrdersController < ApplicationController
     @store = Store.find(params[:store_id])
     @order = current_user.orders.find_by_store_id(@store)
     @subtotal = @order.make_subtotal
-    @service_fee = @subtotal * 0.09
-    @total = @subtotal * 1.09
+    @order_quantity = 0
+
+    current_user.orders.find_by_store_id(@store.id).order_lines.each do |order_line|
+      @order_quantity += order_line.quantity
+    end
+    @order_quantity
+    @delivery_fee = @order_quantity * 2
+    @total = (@delivery_fee + @subtotal)
+    # @service_fee = @total * 0.09
+    @finaltotal = @total * 1.09
+    # @finaltotal = @total + @service_fee
     @addresses = current_user.addresses.all
   end
 
   def show
-    # address_id = params[:order][:address_id]
+    @user = current_user
     @store = Store.find(params[:store_id])
     @order = current_user.orders.find_by_store_id(@store)
-    @subtotal = @order.make_subtotal
-    @service_fee = @subtotal * 0.09
-    @total = @subtotal * 1.09
     @address = Address.find(@order.address_id)
-    # @address= Address.find(params[:order][:address_id])
-    @user = current_user
+    # address_id = params[:order][:address_id]
+    @subtotal = @order.make_subtotal
+    @order_quantity = 0
+    @user.orders.find_by_store_id(@store.id).order_lines.each do |order_line|
+      @order_quantity += order_line.quantity
+    end
+    @order_quantity
+    @delivery_fee = @order_quantity * 2
+    @total = (@delivery_fee + @subtotal)
+    @finaltotal = @total * 1.09
   end
 
    def current_order
    orders.last ? orders.last : nil
-  end
+   end
 end
