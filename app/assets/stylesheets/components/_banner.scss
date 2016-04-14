@@ -10,6 +10,10 @@
   margin-bottom: 100px;
   padding: 264px 0;
   padding-bottom: 140px;
+
+  @media (max-width: $screen-sm) {
+    padding-top: 60px;
+  }
 }
 .banner h1 {
   font-size: 70px;
