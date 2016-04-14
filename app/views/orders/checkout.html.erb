@@ -21,7 +21,7 @@
 
         <div class="dropdown address_add_format">
           <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <div class=""> <%= link_to "Add a new address", "#", { class: "item-link", "data-target": "#addressModal", "data-toggle":"modal"} %> <span class="caret"></span></div>
+            <div class=""> <%= link_to "Add a new address", "#", { class: "item-link", "data-target": "#addressModal", "data-toggle":"modal"} %> <span class=""></span></div>
 
           </a>
 
@@ -126,7 +126,7 @@
               <th>Delivery</th>
               <td><span class="blitz"> $ <%= @delivery_fee %>.00</span></td>
             </tr>
-            <tr class="checkout_item_written">
+            <tr class="checkout_item_written underline">
               <th>Service Fee <span class="small_percentage_format">(9.00%)</span></th>
               <td>$ <%= number_with_precision @service_fee, :precision => 2 %> </td>
             </tr>
