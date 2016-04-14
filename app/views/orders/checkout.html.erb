@@ -21,7 +21,7 @@
 
         <div class="dropdown address_add_format">
           <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <div class="">Add a new address <span class="caret"></span></div>
+            <div class=""> <%= link_to "Add a new address", "#", { class: "item-link", "data-target": "#addressModal", "data-toggle":"modal"} %> <span class="caret"></span></div>
 
           </a>
 
@@ -41,7 +41,7 @@
 
 
           <%= simple_form_for [@store, @order], html: { method: "patch", id: "pay-form" } do |f| %>
-            <%= f.input :address_id, validates: { presence: true }, collection: current_user.addresses, label_method: :full_name, value_method: :id, id: 'order_address_id',  :prompt => 'Select an address' %>
+            <%= f.input :address_id, validates: { presence: true }, collection: current_user.addresses.order("addresses.created_at desc"), label_method: :full_name, value_method: :id, id: 'order_address_id',  :prompt => 'Select an address', selected: current_user.addresses.last %>
 
 
 
@@ -164,6 +164,27 @@
 </div>
 </div>
 
+<div class="modal fade" id="addressModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="add_item_format">
+  <h2>Add Address</h2>
+  <%= simple_form_for [@store, Address.new] do |f| %>
+  <%= f.input :number %>
+  <%= f.input :street_name %>
+  <%= f.input :city %>
+  <%= f.input :zip_code %>
+  <%#= f.input :store_id, as: :hidden ,input_html: {store_id: params[:store_id]} %>
+  <%= f.button :submit, class: 'btn-moses address_form_margin' %>
+  <% end %>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- THIS CODE BELOW IS FOR STRIPE FUNCTIONALITY  -->
 
 <% content_for :after_js do %>
@@ -226,3 +247,4 @@
 </script>
 
 <% end %>
+

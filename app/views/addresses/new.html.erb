@@ -1,4 +1,11 @@
-<h1>Addresses#new</h1>
-<p>Find me in app/views/addresses/new.html.erb</p>
-
-
+<div class="add_item_format">
+  <h2>Add Address</h2>
+  <%= simple_form_for [@store, Address.new] do |f| %>
+  <%= f.input :number %>
+  <%= f.input :street_name %>
+  <%= f.input :city %>
+  <%= f.input :zip_code %>
+  <%#= f.input :store_id, as: :hidden ,input_html: {store_id: params[:store_id]} %>
+  <%= f.button :submit, class: 'btn-moses address_form_margin' %>
+  <% end %>
+</div>
