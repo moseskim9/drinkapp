@@ -118,17 +118,17 @@
               <th>Subtotal</th>
               <td>$ <%= number_with_precision @subtotal, :precision => 2 %></td>
             </tr>
-            <tr class="checkout_item_written">
-              <th>Service Fee <span class="small_percentage_format">(9.00%)</span></th>
-              <td>$ <%= number_with_precision @service_fee, :precision => 2 %> </td>
-            </tr>
             <tr class="tax-and-fees" style="display:none;">
               <th>Tax &amp; Fees</th>
               <td>TBD</td>
             </tr>
-            <tr class="checkout_item_written underline">
+            <tr class="checkout_item_written">
               <th>Delivery</th>
-              <td><span class="blitz"></span>TBD</td>
+              <td><span class="blitz"> $ <%= @delivery_fee %>.00</span></td>
+            </tr>
+            <tr class="checkout_item_written">
+              <th>Service Fee <span class="small_percentage_format">(9.00%)</span></th>
+              <td>$ <%= number_with_precision @service_fee, :precision => 2 %> </td>
             </tr>
             <tr class="discounts" style="display:none;">
               <th>Discounts</th>
@@ -139,7 +139,7 @@
               <th class="estimated-label">Estimated Total</th>
               <td>
                 <a href="#" data-toggle="popover" data-trigger="hover" data-placement="left" data-html="true" data-content="Your card may be temporarily authorized for more than your final order total. This will be adjusted when your order is complete." class="icon-info fee-breakdown" data-original-title="" title=""></a>
-                <span class="value"> $ <%= number_with_precision @total, :precision => 2 %></span>
+                <span class="value"> $ <%= number_with_precision @finaltotal, :precision => 2 %></span>
               </td>
             </tr>
           </tbody></table>
@@ -190,7 +190,7 @@
       handler.open({
         name: 'Drincapp',
         description: 'Drink Delivery',
-        amount: '@subtotal'
+        amount: '@finaltotal'
       });
       e.preventDefault();
     });
