@@ -12,6 +12,7 @@ class OrderLinesController < ApplicationController
     @store = @item.store
     @orderline = @item.order_lines.new
     @orderline.quantity = 1
+    @size = ["Small","Medium","Large"]
 
     render layout: nil
   end
@@ -53,7 +54,7 @@ class OrderLinesController < ApplicationController
   private
 
   def order_line_params
-    params.require(:order_line).permit(:quantity, :special_instruction)
+    params.require(:order_line).permit(:size, :quantity, :special_instruction)
   end
 
   def find_order_line
