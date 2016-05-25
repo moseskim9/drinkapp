@@ -36,18 +36,57 @@
 
 
             </td>
-            <td>
-              <span class="total"> $ <%= number_with_precision order_line.item.price, :precision => 2 %>
-              </span>
-            </td>
-            <td>
+
+            <% if order_line.size == "Small" %>
+
+              <td>
+                <span class="total"> $ <%= number_with_precision order_line.item.price, :precision => 2 %>
+                </span>
+              </td>
+              <td>
+
+            <% elsif order_line.size == "Medium" %>
+
+              <td>
+                <span class="total"> $ <%= number_with_precision order_line.item.medium_price, :precision => 2 %>
+                </span>
+              </td>
+              <td>
+
+            <% else %>
+
+              <td>
+                <span class="total"> $ <%= number_with_precision order_line.item.large_price, :precision => 2 %>
+                </span>
+              </td>
+              <td>
+
+            <% end %>
+
+
 
               <span class="quantity text-center"> <%= order_line.quantity %>
               </span>
             </td>
             <td>
+
+            <% if order_line.size == "Small" %>
+
               <span class="total col_width"> $ <%= number_with_precision ((order_line.item.price) * (order_line.quantity)), :precision => 2 %>
               </span>
+
+            <% elsif order_line.size == "Medium" %>
+
+              <span class="total col_width"> $ <%= number_with_precision ((order_line.item.medium_price) * (order_line.quantity)), :precision => 2 %>
+              </span>
+
+            <% else %>
+
+              <span class="total col_width"> $ <%= number_with_precision ((order_line.item.large_price) * (order_line.quantity)), :precision => 2 %>
+              </span>
+
+            <% end %>
+
             </td>
           </tr>
         </tbody>
@@ -72,7 +111,10 @@
             </td>
 
 
-            <td><span class="subtotal col_width;"> $ <%= number_with_precision @subtotal, :precision => 2 %> </span></td>
+            <td>
+              <span class="subtotal col_width;"> $ <%= number_with_precision @subtotal, :precision => 2 %>
+              </span>
+            </td>
 
           </tr>
         </tbody>

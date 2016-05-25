@@ -1,10 +1,27 @@
 <div class="add_item_format">
-  <h2>Add Item</h2>
+  <h3> <%= @item.name %> </h3>
+  <h5> $ <%= @item.price %> </h5>
 
   <%= simple_form_for [@store, @item, @orderline] do |f| %>
+  <%= f.input :size, collection: @size %>
   <%= f.input :quantity %>
   <%= f.input :special_instruction %>
   <%= f.button :submit, class: 'btn-moses', value: 'Add Item' %> </div>
   <% end %>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

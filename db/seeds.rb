@@ -182,7 +182,7 @@ end
 
 [
   #STUMPTON
-  { name: "All natural Boylan Cola (12oz)", price: 3.00    },
+  { name: "All natural Boylan Cola (12oz)", price: 3.00, medium_price: 4.00, large_price: 5.00    },
   { name: "Bundaberg Ginger Beer (375ml", price: 3.00    },
   { name: "Virgil's Cherry Cream Soda", price: 3.00    },
   { name: "Harney & Sons Organic Peach Tea (16oz)", price: 4.00    },
@@ -192,7 +192,7 @@ end
   { name: "Bundberg Grapefruit Soda (275 ml)", price: 3.00    },
   { name: "Virgils Rootbeer (12oz)", price: 3.00    },
   { name: "Harney & Sons Organica Green Tea", price: 4.00    },
-  { name: "Stumpton Cold Brew Coffee w/ Milk (16 oz)", price: 5.00    }
+  { name: "Stumpton Cold Brew Coffee w/ Milk (16 oz)", price: 5.00, medium_price: 6.00, large_price: 7.00    }
 ].each do |item_attributes|
   store_stumptown.items.create!(item_attributes)
 end

@@ -25,16 +25,19 @@
 
           </a>
 
-          <ul class="dropdown-menu add_address_form_format address_form_margin" aria-labelledby="dLabel"><div class="new_order_line address_form_margin width_200">
-            <%= simple_form_for [@store, Address.new] do |f| %>
-            <%= f.input :number %>
-            <%= f.input :street_name %>
-            <%= f.input :city %>
-            <%= f.input :zip_code %> </div>
+          <ul class="dropdown-menu add_address_form_format address_form_margin" aria-labelledby="dLabel">
+            <div class="new_order_line address_form_margin width_200">
+              <%= simple_form_for [@store, Address.new] do |f| %>
+              <%= f.input :number %>
+              <%= f.input :street_name %>
+              <%= f.input :city %>
+              <%= f.input :zip_code %>
+            </div>
             <%#= f.input :store_id, as: :hidden ,input_html: {store_id: params[:store_id]} %>
             <%= f.button :submit, class: 'btn-moses address_form_margin' %>
             <% end %>
           </ul>
+
         </div>
 
         <div class="checkout_title">
@@ -44,9 +47,6 @@
             <%= f.input :address_id, validates: { presence: true }, collection: current_user.addresses.order("addresses.created_at desc"), label_method: :full_name, value_method: :id, id: 'order_address_id',  :prompt => 'Select an address', selected: current_user.addresses.last %>
 
 
-
-
-            <br>
 
 
           <!--             CUSTOM STRIPE BUTTON  AND STRIPE FORM STARTS FROM HERE       -->
@@ -77,6 +77,11 @@
               </script> -->
             <!-- </form> -->
           <%# end %>
+        </div>
+
+        <div class="checkout_title">
+
+          <%= f.input :cell, validates: { presence: true }, placeholder: 'Cell Number' %>
         </div>
 
       <br>
@@ -127,8 +132,8 @@
               <td><span class="blitz"> $ <%= @delivery_fee %>.00</span></td>
             </tr>
             <tr class="checkout_item_written underline">
-              <th>Service Fee <span class="small_percentage_format">(9.00%)</span></th>
-              <td>$ <%= number_with_precision @service_fee, :precision => 2 %> </td>
+              <th>Tax and Fee <span class="small_percentage_format"></span></th>
+              <td>$ <%= number_with_precision @tax_and_fee, :precision => 2 %> </td>
             </tr>
             <tr class="discounts" style="display:none;">
               <th>Discounts</th>
