@@ -32,27 +32,48 @@
     <div class="row">
       <% @store.items.each do |item| %>
       <div class= "col-xs-12 col-md-6 highlight">
-        <div class="store_item">
+
+        <div class="store_item" data-price-small= <%= item.price %> data-price-large= <%= item.large_price %> data-price-medium= <%= item.medium_price %>>
         <% if current_user %>
           <%= link_to item.name, new_store_item_order_line_path(@store, item), { class: "item-link", "data-target": "#myModal", "data-toggle":"modal"} %>
         <% else %>
           <%= link_to item.name, new_user_session_path(store_id: @store.id) %>
         <% end %>
         </div>
+
         <div class="price">
           <%= number_with_precision item.price, :precision => 2 %>
         </div>
+
+        <div class="modal_price">
+          <%= number_with_precision item.large_price, :precision => 2 %>
+        </div>
+
       </div>
       <% end %>
     </div>
   </div>
+</div>
 
 <%= render 'shared/modalform' %>
 
 
+<script>
+
+$('.store_item').onclick = function() {
+
+var price_small = this.data('price-small');
+
+var price_medium = this.data('price-medium');
+
+var price_large = this.data('price-large');
+
+$('.modal_price').html(price_small);
+
+};
+
+</script>
 
 
 
-<!--   <div class="col-xs-6">
-    </div>
-  -->
+
