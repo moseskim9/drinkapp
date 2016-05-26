@@ -1,10 +1,13 @@
 
 
-<div class="add_item_format modal_price">
+<div class="add_item_format">
   <h3> <%= @item.name %> </h3>
-  <h5> $ <%= number_with_precision @item.price, :precision => 2 %> </h5>
+
 </div>
 
+<div class="modal">
+  <h5> $ <%= number_with_precision @item.price, :precision => 2 %> </h5>
+</div>
 
 
 <div class="add_item_format">
@@ -17,21 +20,24 @@
 </div>
 
 
-
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 
-$('.store_item').onclick = function() {
+$(document).ready(function(){
 
-var price_small = this.data('price-small');
+  $('.store_item').onclick = function() {
 
-var price_medium = this.data('price-medium');
+  var small = this.data('small');
 
-var price_large = this.data('price-large');
+  var medium = this.data('medium');
 
-$('.modal_price').html(price_small);
+  var large = this.data('large');
 
-};
+  $('.modal').html( small );
 
+  };
+
+});
 </script>
 
 <script>
