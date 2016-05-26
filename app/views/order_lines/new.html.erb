@@ -1,18 +1,54 @@
-<div class="add_item_format">
-  <h3> <%= @item.name %> </h3>
-  <h5> $ <%= @item.price %> </h5>
 
+
+<div class="add_item_format modal_price">
+  <h3> <%= @item.name %> </h3>
+  <h5> $ <%= number_with_precision @item.price, :precision => 2 %> </h5>
+</div>
+
+
+
+<div class="add_item_format">
   <%= simple_form_for [@store, @item, @orderline] do |f| %>
-  <%= f.input :size, collection: @size %>
+  <%= f.input :size, collection: @size, class:"dropdown-prices" %>
   <%= f.input :quantity %>
   <%= f.input :special_instruction %>
-  <%= f.button :submit, class: 'btn-moses', value: 'Add Item' %> </div>
+  <%= f.button :submit, class: 'btn-moses', value: 'Add Item' %>
   <% end %>
 </div>
 
 
 
+<script>
 
+$('.store_item').onclick = function() {
+
+var price_small = this.data('price-small');
+
+var price_medium = this.data('price-medium');
+
+var price_large = this.data('price-large');
+
+$('.modal_price').html(price_small);
+
+};
+
+</script>
+
+<script>
+  $('.dropdown-prices').on("change", function() {
+    var size;
+    size = this.val();
+    if (size === "Medium") {
+      '.modal-price'.html(price_medium);
+    }
+    if (size === "Large") {
+      '.modal-price'.html(price_large);
+    }
+    if (size === "Small") {
+      return '.modal-price'.html(price_small);
+    }
+  });
+</script>
 
 
 
