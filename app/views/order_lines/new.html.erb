@@ -1,8 +1,8 @@
 
 
-<div class="add_item_format">
+<div class="add_item_format modal-price">
   <h3> <%= @item.name %> </h3>
-
+  <h5> $ <%= number_with_precision @item.price, :precision => 2 %> </h5>
 </div>
 
 <div class="modal">
@@ -33,7 +33,7 @@ $(document).ready(function(){
 
   var large = this.data('large');
 
-  $('.modal').html( small );
+  $('.modal-price h5').html( small );
 
   };
 
