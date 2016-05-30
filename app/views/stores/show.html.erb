@@ -43,7 +43,7 @@
 
 
 
-        <div class="price modal_price">
+        <div class="price">
           <%= number_with_precision item.price, :precision => 2 %>
         </div>
 
@@ -69,7 +69,7 @@ $(document).ready(function(){
 
   var large = this.data('large');
 
-  $('.modal').html( small );
+  $('.modal-price h5').html( small );
 
   };
 
