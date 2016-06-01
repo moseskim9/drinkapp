@@ -1,18 +1,21 @@
 
 
-<div class="add_item_format modal-price">
+<div class="add_item_format">
+
   <h3> <%= @item.name %> </h3>
-  <h5> $ <%= number_with_precision @item.price, :precision => 2 %> </h5>
+
 </div>
 
-<div class="modal">
+<div class="modal-price">
+
   <h5> $ <%= number_with_precision @item.price, :precision => 2 %> </h5>
+
 </div>
 
 
 <div class="add_item_format">
   <%= simple_form_for [@store, @item, @orderline] do |f| %>
-  <%= f.input :size, collection: @size, class:"dropdown-prices" %>
+  <%= f.input :size, collection: @size, include_blank: false, :input_html => { :id => "dropdown-prices" }, remote: true %>
   <%= f.input :quantity %>
   <%= f.input :special_instruction %>
   <%= f.button :submit, class: 'btn-moses', value: 'Add Item' %>
@@ -25,37 +28,48 @@
 
 $(document).ready(function(){
 
-  $('.store_item').onclick = function() {
+  $('.store_item').click(function(){
 
-  var small = this.data('small');
+  var small = $(".store_item").data('small');
 
-  var medium = this.data('medium');
+  var medium = $(".store_item").data('medium');
 
-  var large = this.data('large');
+  var large = $(".store_item").data('large');
 
   $('.modal-price h5').html( small );
 
-  };
+  });
 
 });
 </script>
 
 <script>
-  $('.dropdown-prices').on("change", function() {
-    var size;
-    size = this.val();
-    if (size === "Medium") {
-      '.modal-price'.html(price_medium);
-    }
-    if (size === "Large") {
-      '.modal-price'.html(price_large);
-    }
-    if (size === "Small") {
-      return '.modal-price'.html(price_small);
-    }
-  });
-</script>
+$(document).ready(function(){
 
+  $('#dropdown-prices').change(function(){
+
+    var small = $(".store_item").data('small');
+
+    var medium = $(".store_item").data('medium');
+
+    var large = $(".store_item").data('large');
+
+    var size = this.val();
+
+    if (size == "Medium") {
+      $('.modal-price h5').html( medium );
+    }
+    if (size == "Large") {
+      $('.modal-price h5').html( large );
+    }
+    if (size == "Small") {
+      $('.modal-price h5').html( small );
+    }
+
+  });
+
+});
+</script>
 
 
 
