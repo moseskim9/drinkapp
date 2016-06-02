@@ -17,10 +17,10 @@
 //= require gmaps/google
 //= require_tree .
 
-$(".item-link").on("show.bs.modal", function(e) {
-    var link = $(e.relatedTarget);
-    $(this).find(".modal-body").load(link.attr("href"));
-});
+// $(".item-link").on("show.bs.modal", function(e) {
+//     var link = $(e.relatedTarget);
+//     $(this).find(".modal-body").load(link.attr("href"));
+// });
 
 
 
