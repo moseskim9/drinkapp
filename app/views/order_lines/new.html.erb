@@ -8,8 +8,8 @@
 
 
 <div class="add_item_format">
-  <%= simple_form_for [@store, @item, @orderline], remote: true do |f| %>
-  <%= f.input :size, collection: @size,  include_blank: false, :input_html => { :id => "dropdown-prices" }, method: :patch %>
+  <%= simple_form_for [@store, @item, @orderline] do |f| %>
+  <%= f.input :size, collection: @size,  include_blank: false, :input_html => { :id => "dropdown-prices" }%>
   <%= f.input :quantity %>
   <%= f.input :special_instruction %>
   <%= f.button :submit, class: 'btn-moses', value: 'Add Item' %>
