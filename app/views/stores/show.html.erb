@@ -35,7 +35,9 @@
 
         <div class="store_item" data-small= <%= item.price %> data-large= <%= item.large_price %> data-medium= <%= item.medium_price %>>
         <% if current_user %>
-          <%= link_to item.name, new_store_item_order_line_path(@store, item), { class: "item-link", "data-target": "#myModal", "data-toggle":"modal"} %>
+
+          <%= link_to item.name, new_store_item_order_line_path(@store, item), { class: "item-link", "data-target": "#myModal", "data-toggle":"modal", "data-id": item.price} %>
+
         <% else %>
           <%= link_to item.name, new_user_session_path(store_id: @store.id) %>
         <% end %>
@@ -58,6 +60,30 @@
 
 
 
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+
+
+$(document).ready(function(){
+
+  $('.item-link').click(function(){
+
+  var price = $(this).data('id');
+
+  var small = $(this).data('small');
+
+  var medium = $(this).data('medium');
+
+  var large = $(this).data('large');
+
+  $('.modal-price span').html( price );
+
+  });
+
+});
+</script>
 
 
 
