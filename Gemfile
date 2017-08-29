@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
+ruby '2.3.3'
 gem 'rails_12factor', group: :production
 gem 'puma',           group: :production
 gem 'bootstrap-sass'

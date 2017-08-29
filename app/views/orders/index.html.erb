@@ -77,12 +77,12 @@
 
             <% elsif order_line.size == "Medium" %>
 
-              <span class="total col_width"> $ <%= number_with_precision ((order_line.item.medium_price) * (order_line.quantity)), :precision => 2 %>
+              <span class="total col_width"> $ <%= number_with_precision ((order_line.item.price) * (order_line.quantity)), :precision => 2 %>
               </span>
 
             <% else %>
 
-              <span class="total col_width"> $ <%= number_with_precision ((order_line.item.large_price) * (order_line.quantity)), :precision => 2 %>
+              <span class="total col_width"> $ <%= number_with_precision ((order_line.item.price) * (order_line.quantity)), :precision => 2 %>
               </span>
 
             <% end %>

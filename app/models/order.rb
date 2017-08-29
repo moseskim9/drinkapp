@@ -8,9 +8,9 @@ class Order < ActiveRecord::Base
       if order_line.size == "Small"
         subtotal += order_line.quantity * order_line.item.price
       elsif order_line.size == "Medium"
-        subtotal += order_line.quantity * order_line.item.medium_price
+        subtotal += order_line.quantity * order_line.item.price
       else
-        subtotal += order_line.quantity * order_line.item.large_price
+        subtotal += order_line.quantity * order_line.item.price
       end
     end
     subtotal
